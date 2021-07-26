@@ -1,23 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="core">
-      <UniqueIdentifier>{4E40957C-3A77-960D-E363-7C10CF79120F}</UniqueIdentifier>
+    <Filter Include="Fjord">
+      <UniqueIdentifier>{DABA2D0D-46CF-55BE-0F51-F91D7B2452EF}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fjord\core">
+      <UniqueIdentifier>{9243E130-7EFB-227E-E702-FCD9D3D9BD6E}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fjord.h" />
     <ClInclude Include="src\Fjord\core\Application.h">
-      <Filter>core</Filter>
+      <Filter>Fjord\core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fjord\core\Core.h" />
+    <ClInclude Include="src\Fjord\core\Core.h">
+      <Filter>Fjord\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\core\EntryPoint.h">
-      <Filter>core</Filter>
+      <Filter>Fjord\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\core\Log.h">
+      <Filter>Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\fjordpch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\core\Application.cpp">
-      <Filter>core</Filter>
+      <Filter>Fjord\core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\core\Log.cpp">
+      <Filter>Fjord\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\fjordpch.cpp" />
   </ItemGroup>
 </Project>

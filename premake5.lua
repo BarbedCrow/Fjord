@@ -11,6 +11,7 @@ workspace "Fjord"
 
 outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 IncludeDir = {}
+IncludeDir["spdlog"] = "Engine/vendor/spdlog/include"
 
 project "Engine"
 	location "Engine"
@@ -24,6 +25,9 @@ project "Engine"
 	targetdir ("bin/" .. outputdir .. "/%{prj.name}") 
 	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
 
+	pchheader "fjordpch.h"
+	pchsource "Engine/src/fjordpch.cpp"
+
 	files
 	{
 		"%{prj.name}/src/**.h",
@@ -33,6 +37,7 @@ project "Engine"
 	includedirs
 	{
 		"%{prj.name}/src",
+		"%{IncludeDir.spdlog}"
 	}
 
 	filter "system:windows"
@@ -41,7 +46,6 @@ project "Engine"
 
 		defines
 		{
-			"FJORD_PLATFORM_WINDOWS",
 			"FJORD_BUILD_DLL",
 			"GLFW_INCLUDE_NONE"
 		}
@@ -81,7 +85,8 @@ project "Sandbox"
 
 	includedirs
 	{
-		"Engine/src"
+		"Engine/src",
+		"%{IncludeDir.spdlog}"
 	}
 
 	links
@@ -91,11 +96,6 @@ project "Sandbox"
 
 	filter "system:windows"
 		systemversion "latest"
-
-		defines
-		{
-			"FJORD_PLATFORM_WINDOWS"
-		}
 
 	filter "configurations:Debug"
 		defines 
