@@ -12,6 +12,9 @@ workspace "Fjord"
 outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
 IncludeDir = {}
 IncludeDir["spdlog"] = "Engine/vendor/spdlog/include"
+IncludeDir["GLFW"] = "Engine/vendor/glfw/include"
+
+include "Engine/vendor/glfw"
 
 project "Engine"
 	location "Engine"
@@ -37,7 +40,13 @@ project "Engine"
 	includedirs
 	{
 		"%{prj.name}/src",
-		"%{IncludeDir.spdlog}"
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.GLFW}",
+	}
+
+	links
+	{
+		"GLFW",
 	}
 
 	filter "system:windows"

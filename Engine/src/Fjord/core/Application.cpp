@@ -11,6 +11,7 @@ namespace Fjord
 	{
 		s_Instance = this;
 		Log::Init();
+		m_Window = Window::Create("FJORD", 1280, 720);
 	}
 
 	Application::~Application()
@@ -22,7 +23,7 @@ namespace Fjord
 	{
 		while (true)
 		{
-
+			m_Window->Update();
 		}
 	}
 

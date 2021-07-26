@@ -7,6 +7,12 @@
     <Filter Include="Fjord\core">
       <UniqueIdentifier>{9243E130-7EFB-227E-E702-FCD9D3D9BD6E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Platform">
+      <UniqueIdentifier>{2AC788B4-1694-E3BF-3FAD-D1672BD9184E}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Platform\Windows">
+      <UniqueIdentifier>{64FBD71A-50F4-F66C-7926-DCF1657ED678}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fjord.h" />
@@ -22,6 +28,12 @@
     <ClInclude Include="src\Fjord\core\Log.h">
       <Filter>Fjord\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\core\Window.h">
+      <Filter>Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Platform\Windows\WindowsWindow.h">
+      <Filter>Platform\Windows</Filter>
+    </ClInclude>
     <ClInclude Include="src\fjordpch.h" />
   </ItemGroup>
   <ItemGroup>
@@ -30,6 +42,9 @@
     </ClCompile>
     <ClCompile Include="src\Fjord\core\Log.cpp">
       <Filter>Fjord\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
+      <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\fjordpch.cpp" />
   </ItemGroup>
