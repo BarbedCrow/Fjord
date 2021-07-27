@@ -3,12 +3,16 @@
 #include <string>
 
 #include "Core.h"
+#include "Fjord/core/Event.h"
 
 namespace Fjord
 {
 	class Window
 	{
 	public:
+		Ref<Event<>> OnWindowClose;
+		Ref<Event<uint32_t, uint32_t>> OnWindowResize;
+
 		virtual void Update() = 0;
 
 		virtual void* GetNativeWindow() const = 0;

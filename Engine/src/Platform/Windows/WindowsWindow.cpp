@@ -12,18 +12,22 @@ namespace Fjord
 	
 	WindowsWindow::WindowsWindow(std::string name, uint32_t width, uint32_t height) : m_Name(name), m_Width(width), m_Height(height)
 	{
-		if (!isGLFWInitialized)
-		{
-			int success = glfwInit();
-			FJORD_CORE_ASSERT(success, "Couldn't initialize GLFW");
-			isGLFWInitialized = true;
+		FJORD_CORE_ASSERT(!isGLFWInitialized, "GLFW was already initialized");
 
-			//glfwWindowHint(GLFW_SAMPLES, 4); // MULTISAMPLING
-			m_Window = glfwCreateWindow(m_Width, m_Height, m_Name.c_str(), nullptr, nullptr);
+		int success = glfwInit();
+		FJORD_CORE_ASSERT(success, "Couldn't initialize GLFW");
+		isGLFWInitialized = true;
 
-			glfwSetWindowUserPointer(m_Window, this);
-			SetVSync(true);
-		}
+		//glfwWindowHint(GLFW_SAMPLES, 4); // MULTISAMPLING
+		m_Window = glfwCreateWindow(m_Width, m_Height, m_Name.c_str(), nullptr, nullptr);
+
+		glfwSetWindowUserPointer(m_Window, this);
+		SetVSync(true);
+
+		OnWindowClose = CreateRef<Event<>>(this);
+		OnWindowResize = CreateRef<Event<uint32_t, uint32_t>>(this);
+
+		SetCallbacks();
 	}
 
 	WindowsWindow::~WindowsWindow()
@@ -35,6 +39,21 @@ namespace Fjord
 	{
 		glfwPollEvents();
 		glfwSwapBuffers(m_Window);
+	}
+
+	void WindowsWindow::SetCallbacks()
+	{
+		glfwSetWindowCloseCallback(m_Window, [](GLFWwindow* m_Window)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				window->OnWindowClose->Invoke(window);
+			});
+
+		glfwSetWindowSizeCallback(m_Window, [](GLFWwindow* m_Window, int width, int height)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				window->OnWindowResize->Invoke(window, width, height);
+			});
 	}
 
 }

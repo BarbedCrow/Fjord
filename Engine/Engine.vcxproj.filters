@@ -35,6 +35,7 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\fjordpch.h" />
+    <ClInclude Include="src\Fjord\core\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\core\Application.cpp">

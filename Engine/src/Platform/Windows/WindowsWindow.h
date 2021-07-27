@@ -23,6 +23,8 @@ namespace Fjord
 		virtual bool IsVSync() const override { return m_VSync; }
 
 	private:
+		void SetCallbacks();
+	private:
 		std::string m_Name;
 		uint32_t m_Width, m_Height;
 		bool m_VSync;

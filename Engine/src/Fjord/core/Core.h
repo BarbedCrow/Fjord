@@ -53,7 +53,17 @@
 
 #define BIT(x) (1 << x)
 
+#define BIND_FUNC_0(fn) std::bind(&fn, this)
 #define BIND_FUNC_1(fn) std::bind(&fn, this, std::placeholders::_1)
+#define BIND_FUNC_2(fn) std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2)
+#define BIND_FUNC_3(fn) std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)
+#define BIND_FUNC_4(fn) std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)
+
+#define BIND_EVENT_HANDLER_0(fn) this, std::bind(&fn, this)
+#define BIND_EVENT_HANDLER_1(fn) this, std::bind(&fn, this, std::placeholders::_1)
+#define BIND_EVENT_HANDLER_2(fn) this, std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2)
+#define BIND_EVENT_HANDLER_3(fn) this, std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3)
+#define BIND_EVENT_HANDLER_4(fn) this, std::bind(&fn, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3, std::placeholders::_4)
 
 namespace Fjord
 {

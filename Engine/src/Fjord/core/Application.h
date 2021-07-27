@@ -15,7 +15,12 @@ namespace Fjord
 
 		inline static Application& Get() { return *s_Instance; }
 	private:
+		virtual bool HandleOnWindowClose();
+		virtual bool HandleOnWindowResize(uint32_t width, uint32_t height);
+	private:
 		Scope<Window> m_Window;
+
+		bool m_Running = true;
 
 		static Application* s_Instance;
 	};
