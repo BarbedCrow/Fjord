@@ -19,7 +19,7 @@ namespace Fjord
 		~Event() = default;
 
 		void AddListener(void* listener, std::function<bool(Args...)> listenerFunc) 
-		{
+		{ 
 			if (m_Listeners.find(listener) != m_Listeners.end())
 			{
 				FJORD_CORE_ASSERT(false, "{0} was already subscribed", listener);

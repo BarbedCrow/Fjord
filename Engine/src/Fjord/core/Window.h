@@ -12,6 +12,13 @@ namespace Fjord
 	public:
 		Ref<Event<>> OnWindowClose;
 		Ref<Event<uint32_t, uint32_t>> OnWindowResize;
+		Ref <Event<uint8_t, uint8_t>> OnKeyPressed;
+		Ref <Event<uint8_t>> OnKeyReleased;
+		Ref <Event<uint8_t>> OnKeyTyped;
+		Ref <Event<uint8_t>> OnMouseButtonPressed;
+		Ref <Event<uint8_t>> OnMouseButtonReleased;
+		Ref <Event<float, float>> OnMouseScrolled;
+		Ref<Event<uint32_t, uint32_t>> OnMouseMoved;
 
 		virtual void Update() = 0;
 

@@ -32,7 +32,7 @@ namespace Fjord
 
 	WindowsWindow::~WindowsWindow()
 	{
-
+		glfwDestroyWindow(m_Window);
 	}
 
 	void WindowsWindow::Update()
@@ -53,6 +53,58 @@ namespace Fjord
 			{
 				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
 				window->OnWindowResize->Invoke(window, width, height);
+			});
+		glfwSetKeyCallback(m_Window, [](GLFWwindow* m_Window, int key, int scancode, int action, int mods)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				switch (action)
+				{
+				case GLFW_PRESS:
+					window->OnKeyPressed->Invoke(window, key, 0);
+					break;
+				case GLFW_REPEAT:
+					window->OnKeyPressed->Invoke(window, key, 1);
+					break;
+				case GLFW_RELEASE:
+					window->OnKeyReleased->Invoke(window, key);
+					break;
+				default:
+					break;
+				}
+			});
+
+		glfwSetCharCallback(m_Window, [](GLFWwindow* m_Window, unsigned int codepoint)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				window->OnKeyTyped->Invoke(window, codepoint);
+			});
+
+		glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* m_Window, int button, int action, int mods)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				switch (action)
+				{
+				case GLFW_PRESS:
+					window->OnMouseButtonPressed->Invoke(window, button);
+					break;
+				case GLFW_RELEASE:
+					window->OnMouseButtonReleased->Invoke(window, button);
+					break;
+				default:
+					break;
+				}
+			});
+
+		glfwSetScrollCallback(m_Window, [](GLFWwindow* m_Window, double xOffset, double yOffset)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				window->OnMouseScrolled->Invoke(window, (float)xOffset, (float)yOffset);
+			});
+
+		glfwSetCursorPosCallback(m_Window, [](GLFWwindow* m_Window, double xPos, double yPos)
+			{
+				WindowsWindow* window = (WindowsWindow*)glfwGetWindowUserPointer(m_Window);
+				window->OnMouseMoved->Invoke(window, (float)xPos, (float)yPos);
 			});
 	}
 
