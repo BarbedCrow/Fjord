@@ -26,6 +26,13 @@ namespace Fjord
 
 		OnWindowClose = CreateRef<Event<>>(this);
 		OnWindowResize = CreateRef<Event<uint32_t, uint32_t>>(this);
+		OnKeyPressed = CreateRef<Event<uint8_t, uint8_t>>(this);
+		OnKeyReleased = CreateRef<Event<uint8_t>>(this);
+		OnKeyTyped = CreateRef<Event<uint8_t>>(this);
+		OnMouseButtonPressed = CreateRef<Event<uint8_t>>(this);
+		OnMouseButtonReleased = CreateRef<Event<uint8_t>>(this);
+		OnMouseScrolled = CreateRef<Event<float, float>>(this);
+		OnMouseMoved = CreateRef<Event<uint32_t, uint32_t>>(this);
 
 		SetCallbacks();
 	}

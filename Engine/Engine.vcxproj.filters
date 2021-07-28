@@ -25,6 +25,9 @@
     <ClInclude Include="src\Fjord\core\EntryPoint.h">
       <Filter>Fjord\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\core\Event.h">
+      <Filter>Fjord\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\core\Log.h">
       <Filter>Fjord\core</Filter>
     </ClInclude>
@@ -35,7 +38,6 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\fjordpch.h" />
-    <ClInclude Include="src\Fjord\core\Event.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\core\Application.cpp">
