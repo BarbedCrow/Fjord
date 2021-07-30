@@ -8,6 +8,16 @@ namespace Fjord
 {
 	Application* Application::s_Instance = nullptr;
 
+	struct position {
+		float x;
+		float y;
+	};
+
+	struct velocity {
+		float dx;
+		float dy;
+	};
+
 	Application::Application()
 	{
 		s_Instance = this;

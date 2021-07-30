@@ -19,6 +19,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fjord.h" />
+    <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h">
+      <Filter>Fjord\ImGui</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\core\Application.h">
       <Filter>Fjord\core</Filter>
     </ClInclude>
@@ -41,12 +44,12 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\fjordpch.h" />
-    <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h">
-      <Filter>Fjord\ImGui</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
+      <Filter>Fjord\ImGui</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp">
       <Filter>Fjord\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\core\Application.cpp">
@@ -59,8 +62,5 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\fjordpch.cpp" />
-    <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp">
-      <Filter>Fjord\ImGui</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

@@ -15,6 +15,7 @@ IncludeDir["spdlog"] = "Engine/vendor/spdlog/include"
 IncludeDir["GLFW"] = "Engine/vendor/glfw/include"
 IncludeDir["glad"] = "Engine/vendor/glad/include"
 IncludeDir["imgui"] = "Engine/vendor/imgui"
+IncludeDir["entt"] = "Engine/vendor/entt/include"
 
 include "Engine/vendor/glfw"
 include "Engine/vendor/glad"
@@ -48,6 +49,7 @@ project "Engine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
 		"%{IncludeDir.imgui}",
+		"%{IncludeDir.entt}",
 	}
 
 	links
@@ -105,6 +107,7 @@ project "Sandbox"
 	{
 		"Engine/src",
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.entt}",
 	}
 
 	links

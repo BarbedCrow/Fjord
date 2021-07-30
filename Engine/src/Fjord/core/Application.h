@@ -3,6 +3,8 @@
 #include "Core.h"
 #include "Window.h"
 
+#include "entt/entt.hpp"
+
 namespace Fjord
 {
 	class Application
