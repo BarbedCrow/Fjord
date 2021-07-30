@@ -4,6 +4,9 @@
     <Filter Include="Fjord">
       <UniqueIdentifier>{DABA2D0D-46CF-55BE-0F51-F91D7B2452EF}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Fjord\ImGui">
+      <UniqueIdentifier>{846B314B-F020-AA40-7915-A417E5C9A044}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Fjord\core">
       <UniqueIdentifier>{9243E130-7EFB-227E-E702-FCD9D3D9BD6E}</UniqueIdentifier>
     </Filter>
@@ -38,8 +41,14 @@
       <Filter>Platform\Windows</Filter>
     </ClInclude>
     <ClInclude Include="src\fjordpch.h" />
+    <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h">
+      <Filter>Fjord\ImGui</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
+      <Filter>Fjord\ImGui</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\core\Application.cpp">
       <Filter>Fjord\core</Filter>
     </ClCompile>
@@ -50,5 +59,8 @@
       <Filter>Platform\Windows</Filter>
     </ClCompile>
     <ClCompile Include="src\fjordpch.cpp" />
+    <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp">
+      <Filter>Fjord\ImGui</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

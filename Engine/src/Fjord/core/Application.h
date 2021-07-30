@@ -13,6 +13,7 @@ namespace Fjord
 
 		void Update();
 
+		Window* GetWindow() const { return m_Window.get(); }
 		inline static Application& Get() { return *s_Instance; }
 	private:
 		virtual bool HandleOnWindowClose();

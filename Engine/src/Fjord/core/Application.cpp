@@ -2,6 +2,7 @@
 #include "Application.h"
 
 #include "Fjord/core/Log.h"
+#include "Fjord/ImGui/ImGuiSystem.h"
 
 namespace Fjord
 {
@@ -12,13 +13,16 @@ namespace Fjord
 		s_Instance = this;
 		Log::Init();
 		m_Window = Window::Create("FJORD", 1280, 720);
+
+		ImGuiSystem::Init(m_Window->GetNativeWindow());
+
 		m_Window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::HandleOnWindowClose));
 		m_Window->OnWindowResize->AddListener(BIND_EVENT_HANDLER_2(Application::HandleOnWindowResize));
 	}
 
 	Application::~Application()
 	{
-
+		ImGuiSystem::Terminate();
 	}
 
 	void Application::Update()
@@ -26,9 +30,11 @@ namespace Fjord
 		while (m_Running)
 		{
 			m_Window->Update();
+			ImGuiSystem::Begin();
+			
+			ImGuiSystem::End();
 		}
 	}
-
 
 	bool Application::HandleOnWindowClose()
 	{
