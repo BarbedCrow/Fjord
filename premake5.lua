@@ -17,6 +17,7 @@ IncludeDir["GLFW"] = "Engine/vendor/glfw/include"
 IncludeDir["glad"] = "Engine/vendor/glad/include"
 IncludeDir["imgui"] = "Engine/vendor/imgui"
 IncludeDir["glm"] = "Engine/vendor/glm"
+IncludeDir["stb"] = "Engine/vendor/stb"
 IncludeDir["entt"] = "Engine/vendor/entt/include"
 
 include "Engine/vendor/glfw"
@@ -44,6 +45,8 @@ project "Engine"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
+		"%{prj.name}/3rdparty/stb/**.h",
+		"%{prj.name}/3rdparty/stb/**.cpp",
 	}
 
 	includedirs
@@ -54,6 +57,7 @@ project "Engine"
 		"%{IncludeDir.glad}",
 		"%{IncludeDir.imgui}",
 		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb}",
 		"%{IncludeDir.entt}",
 	}
 
