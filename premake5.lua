@@ -10,11 +10,13 @@ workspace "Fjord"
 	}
 
 outputdir = "%{cfg.buildcfg}_%{cfg.system}_%{cfg.architecture}"
+
 IncludeDir = {}
 IncludeDir["spdlog"] = "Engine/vendor/spdlog/include"
 IncludeDir["GLFW"] = "Engine/vendor/glfw/include"
 IncludeDir["glad"] = "Engine/vendor/glad/include"
 IncludeDir["imgui"] = "Engine/vendor/imgui"
+IncludeDir["glm"] = "Engine/vendor/glm"
 IncludeDir["entt"] = "Engine/vendor/entt/include"
 
 include "Engine/vendor/glfw"
@@ -40,6 +42,8 @@ project "Engine"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/vendor/glm/glm/**.hpp",
+		"%{prj.name}/vendor/glm/glm/**.inl",
 	}
 
 	includedirs
@@ -49,6 +53,7 @@ project "Engine"
 		"%{IncludeDir.GLFW}",
 		"%{IncludeDir.glad}",
 		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
 	}
 
@@ -107,6 +112,7 @@ project "Sandbox"
 	{
 		"Engine/src",
 		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
 	}
 

@@ -41,7 +41,6 @@ namespace Fjord
 		{
 			m_Window->Update();
 			ImGuiSystem::Begin();
-			
 			ImGuiSystem::End();
 		}
 	}
