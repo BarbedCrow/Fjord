@@ -4,19 +4,14 @@
 #include "Fjord/core/Log.h"
 #include "Fjord/ImGui/ImGuiSystem.h"
 
+//REMOVE
+#include <glad/glad.h>
+#include <imgui.h>
+#include <glm/gtc/type_ptr.hpp>
+
 namespace Fjord
 {
 	Application* Application::s_Instance = nullptr;
-
-	struct position {
-		float x;
-		float y;
-	};
-
-	struct velocity {
-		float dx;
-		float dy;
-	};
 
 	Application::Application()
 	{
@@ -28,6 +23,29 @@ namespace Fjord
 
 		m_Window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::HandleOnWindowClose));
 		m_Window->OnWindowResize->AddListener(BIND_EVENT_HANDLER_2(Application::HandleOnWindowResize));
+
+
+		//TEST RENDER SETUP; REMOVE
+		//Vertex Buffer
+		float vertices[3 * 4] = {
+			-0.5f, -0.5f, 0.0f,
+			 0.5f, -0.5f, 0.0f,
+			 0.5f,  0.5f, 0.0f,
+			-0.5f,  0.5f, 0.0f,
+		};
+
+		auto vBuffer = CreateRef<VertexBuffer>(vertices, sizeof(vertices));
+		BufferLayout layout = {
+			{ShaderDataType::Float3, "a_Position"},
+		};
+		vBuffer->SetLayout(layout);
+
+		uint32_t indices[6] = { 0, 1, 2, 2, 3, 0 };
+		auto iBuffer = CreateRef<IndexBuffer>(indices, 6);
+
+		m_VertexArray = CreateRef<VertexArray>();
+		m_VertexArray->AddVertexBuffer(vBuffer);
+		m_VertexArray->SetIndexBuffer(iBuffer);
 	}
 
 	Application::~Application()
@@ -41,6 +59,20 @@ namespace Fjord
 		{
 			m_Window->Update();
 			ImGuiSystem::Begin();
+
+			//TEST RENDER; REMOVE LATER
+			//Imgui
+			ImGui::Begin("TEST");
+			ImGui::ColorPicker4("Color", glm::value_ptr(testColor));
+			ImGui::End();
+			
+			//Render
+			m_VertexArray->Bind();
+			glClearColor(testColor.r, testColor.g, testColor.b, testColor.a);
+			glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+			glDrawElements(GL_TRIANGLES, m_VertexArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			//TEST RENDER//////////////
+
 			ImGuiSystem::End();
 		}
 	}

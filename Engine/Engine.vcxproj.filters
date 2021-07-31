@@ -1317,6 +1317,9 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Buffer.h" />
+    <ClInclude Include="src\Fjord\Render\VertexArray.h" />
+    <ClInclude Include="src\Fjord\Render\Shader.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
@@ -1337,5 +1340,8 @@
     <ClCompile Include="src\fjordpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Buffer.cpp" />
+    <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
+    <ClCompile Include="src\Fjord\Render\Shader.cpp" />
   </ItemGroup>
 </Project>

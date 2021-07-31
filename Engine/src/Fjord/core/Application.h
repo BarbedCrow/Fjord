@@ -5,6 +5,11 @@
 
 #include "entt/entt.hpp"
 
+//REMOVE
+#include "Fjord/Render/Buffer.h"
+#include "Fjord/Render/Shader.h"
+#include "Fjord/Render/VertexArray.h"
+
 namespace Fjord
 {
 	class Application
@@ -13,7 +18,7 @@ namespace Fjord
 		Application();
 		virtual ~Application();
 
-		void Update();
+		virtual void Update();
 
 		Window* GetWindow() const { return m_Window.get(); }
 		inline static Application& Get() { return *s_Instance; }
@@ -26,6 +31,10 @@ namespace Fjord
 		bool m_Running = true;
 
 		static Application* s_Instance;
+
+		//REMOVE
+		glm::vec4 testColor = glm::vec4(1.f);
+		Ref<VertexArray> m_VertexArray;
 	};
 
 	Application* CreateApplication();
