@@ -140,6 +140,9 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
     <ClInclude Include="src\Fjord\Render\Shader.h" />
     <ClInclude Include="src\Fjord.h" />
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h" />
@@ -152,6 +155,7 @@
     <ClInclude Include="src\Fjord\Render\Buffer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\fjordpch.h" />
+    <ClInclude Include="src\Fjord\core\Time.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -570,6 +574,7 @@
     <ClInclude Include="src\Fjord\Render\VertexArray.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Fjord\Render\Shader.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp" />
@@ -581,6 +586,7 @@
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
+    <ClCompile Include="src\Fjord\core\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">

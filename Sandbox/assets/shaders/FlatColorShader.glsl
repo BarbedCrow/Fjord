@@ -12,7 +12,7 @@
 	void main()
 	{
 //		gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
-		gl_Position = a_Position;
+		gl_Position = vec4(a_Position, 1.0);
 	}
 
 #type fragment

@@ -1,14 +1,12 @@
 #pragma once
 
-#include "Core.h"
-#include "Window.h"
+#include <vector>
 
 #include "entt/entt.hpp"
 
-//REMOVE
-#include "Fjord/Render/Buffer.h"
-#include "Fjord/Render/Shader.h"
-#include "Fjord/Render/VertexArray.h"
+#include "Core.h"
+#include "Window.h"
+#include "Fjord/ECS/Systems/GameSystem.h"
 
 namespace Fjord
 {
@@ -22,19 +20,20 @@ namespace Fjord
 
 		Window* GetWindow() const { return m_Window.get(); }
 		inline static Application& Get() { return *s_Instance; }
+	protected:
+		void Start() { m_Running = true; }
+	protected:
+		std::vector<Ref<GameSystem>> m_Systems;
+		entt::registry m_Registry;
 	private:
 		virtual bool HandleOnWindowClose();
 		virtual bool HandleOnWindowResize(uint32_t width, uint32_t height);
 	private:
 		Scope<Window> m_Window;
 
-		bool m_Running = true;
+		bool m_Running = false;
 
 		static Application* s_Instance;
-
-		//REMOVE
-		glm::vec4 testColor = glm::vec4(1.f);
-		Ref<VertexArray> m_VertexArray;
 	};
 
 	Application* CreateApplication();
