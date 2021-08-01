@@ -15,11 +15,15 @@ namespace Fjord
 		ImGui::ColorPicker4("Color", glm::value_ptr(testColor));
 		ImGui::End();
 
+		auto camView = m_Registry->view<CameraComponent>();
+		auto camera = camView.get<CameraComponent>(camView[0]);
+
 		for (auto&& [entity, tr, render] : m_Registry->view<TransformComponent, RenderComponent>().each())
 		{
 			render.VerticesArray->Bind();
 			render.shader->Bind();
 			render.shader->UploadUniformVec4("u_Color", testColor);
+			render.shader->UploadUniformMat4("u_ViewProjection", camera.Camera->GetViewProjectionMatrix());
 			glDrawElements(GL_TRIANGLES, render.VerticesArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 		}
 	}

@@ -28,6 +28,15 @@ namespace Fjord
 		ImGuiSystem::Terminate();
 	}
 
+	void Application::Start()
+	{
+		m_Running = true;
+		for (auto sys : m_Systems)
+		{
+			sys->Activate();
+		}
+	}
+
 	void Application::Update()
 	{
 		while (m_Running)

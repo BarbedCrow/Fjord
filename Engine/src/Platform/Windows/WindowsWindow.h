@@ -18,6 +18,7 @@ namespace Fjord
 
 		virtual uint32_t GetWidth() const override { return m_Width; }
 		virtual uint32_t GetHeight() const override { return m_Height; }
+		virtual float GetAspectRatio() const { return (float)GetWidth() / (float)GetHeight(); }
 
 		virtual void SetVSync(bool isVsync) override { m_VSync = isVsync; glfwSwapInterval(m_VSync); }
 		virtual bool IsVSync() const override { return m_VSync; }

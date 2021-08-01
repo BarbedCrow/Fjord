@@ -6,9 +6,12 @@
 #define GLM_ENABLE_EXPERIMENTAL
 #include <glm/gtx/quaternion.hpp>
 
+#include "Fjord/core/Core.h"
+
 #include "Fjord/Render/Buffer.h"
 #include "Fjord/Render/Shader.h"
 #include "Fjord/Render/VertexArray.h"
+#include "Fjord/Render/Camera.h"
 
 namespace Fjord
 {
@@ -43,6 +46,24 @@ namespace Fjord
 			:
 			VerticesArray(vArray),
 			shader(shader)
+		{}
+	};
+
+	struct CameraComponent
+	{
+		float Speed = 1.0f;
+		float ZoomSpeed = 0.25f;
+
+		float AspectRatio;
+		float ZoomLevel = 1.0f;
+
+		Ref<OrthographicCamera> Camera;
+
+		CameraComponent() = default;
+		CameraComponent(float aspectRatio)
+			:
+			AspectRatio(aspectRatio),
+			Camera(CreateRef<OrthographicCamera>(-AspectRatio * ZoomLevel, AspectRatio* ZoomLevel, -ZoomLevel, ZoomLevel))
 		{}
 	};
 }

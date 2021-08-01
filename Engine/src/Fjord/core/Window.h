@@ -26,6 +26,7 @@ namespace Fjord
 
 		virtual uint32_t GetWidth() const = 0;
 		virtual uint32_t GetHeight() const = 0;
+		virtual float GetAspectRatio() const = 0;
 
 		virtual void SetVSync(bool isVsync) = 0;
 		virtual bool IsVSync() const = 0;

@@ -16,12 +16,13 @@ namespace Fjord
 		Application();
 		virtual ~Application();
 
-		virtual void Update();
+		void Start();
+		void Update();
 
 		Window* GetWindow() const { return m_Window.get(); }
 		inline static Application& Get() { return *s_Instance; }
 	protected:
-		void Start() { m_Running = true; }
+		
 	protected:
 		std::vector<Ref<GameSystem>> m_Systems;
 		entt::registry m_Registry;

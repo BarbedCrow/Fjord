@@ -1324,6 +1324,11 @@
     <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
     <ClInclude Include="src\Fjord\core\Time.h" />
+    <ClInclude Include="src\Fjord\core\Input.h" />
+    <ClInclude Include="src\Fjord\core\KeyCodes.h" />
+    <ClInclude Include="src\Fjord\core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Fjord\Render\Camera.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
@@ -1349,5 +1354,8 @@
     <ClCompile Include="src\Fjord\Render\Shader.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Fjord\core\Time.cpp" />
+    <ClCompile Include="src\Fjord\core\Input.cpp" />
+    <ClCompile Include="src\Fjord\Render\Camera.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
   </ItemGroup>
 </Project>

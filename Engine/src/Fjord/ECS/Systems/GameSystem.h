@@ -10,8 +10,8 @@ namespace Fjord
 		GameSystem(entt::registry* registry, bool isActive = true) : m_Registry(registry), m_Active(isActive) {}
 		virtual ~GameSystem() {}
 
-		void Activate() { m_Active = true; }
-		void Deactivate() { m_Active = false; }
+		virtual void Activate() { m_Active = true; }
+		virtual void Deactivate() { m_Active = false; }
 
 		inline bool IsActive() const { return m_Active; }
 
