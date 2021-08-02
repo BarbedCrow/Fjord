@@ -44,11 +44,11 @@
 #endif // End of platform detection
 
 #ifdef FJORD_ENABLE_ASSERTS
-#define FJORD_CORE_ASSERT(x, ...) {if(!(x)) {FJORD_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak();}}
-#define FJORD_ASSERT(x, ...) {if(!(x)) {FJORD_ERROR("Assertion failed: {0}", __VA_ARGS__); __debugbreak();}}
+#define FJORD_CORE_ASSERT(x) {if(!(x)) {__debugbreak();}}
+#define FJORD_ASSERT(x) {if(!(x)) {__debugbreak();}}
 #else
-#define FJORD_CORE_ASSERT(x, ...)
-#define FJORD_ASSERT(x, ...)
+#define FJORD_CORE_ASSERT(x)
+#define FJORD_ASSERT(x)
 #endif
 
 #define BIT(x) (1 << x)

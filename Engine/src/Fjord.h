@@ -10,6 +10,7 @@
 #include "Fjord/Render/Shader.h"
 #include "Fjord/Render/Texture.h"
 #include "Fjord/Render/VertexArray.h"
+#include "Fjord/Render/Framebuffer.h"
 //END RENDER
 
 //INPUT
