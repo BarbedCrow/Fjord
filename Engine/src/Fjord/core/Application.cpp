@@ -15,7 +15,7 @@ namespace Fjord
 	{
 		s_Instance = this;
 		Log::Init();
-		m_Window = Window::Create("FJORD", 1280, 720);
+		m_Window = Window::Create("FJORD", 1920, 1080);
 
 		ImGuiSystem::Init(m_Window->GetNativeWindow());
 

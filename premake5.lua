@@ -162,6 +162,7 @@ project "Editor"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/assets/**.glsl",
 		"%{prj.name}/assets/**.png",
+		"%{prj.name}/assets/**.ttf",
 	}
 
 	includedirs

@@ -134,6 +134,18 @@
     <ClCompile Include="src\EditorApp.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\fonts\Roboto\Roboto-Black.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Bold.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Italic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Light.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-LightItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Medium.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Regular.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Thin.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf" />
     <None Include="assets\shaders\FlatColorShader.glsl" />
     <None Include="assets\shaders\TextureShader.glsl" />
   </ItemGroup>
