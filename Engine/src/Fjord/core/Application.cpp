@@ -19,8 +19,7 @@ namespace Fjord
 
 		ImGuiSystem::Init(m_Window->GetNativeWindow());
 
-		m_Window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::HandleOnWindowClose));
-		m_Window->OnWindowResize->AddListener(BIND_EVENT_HANDLER_2(Application::HandleOnWindowResize));
+		m_Window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::Close));
 	}
 
 	Application::~Application()
@@ -48,20 +47,13 @@ namespace Fjord
 			{
 				if (sys->IsActive()) sys->Update();
 			}
-
 			ImGuiSystem::End();
 		}
 	}
 
-	bool Application::HandleOnWindowClose()
+	bool Application::Close()
 	{
 		m_Running = false;
 		return true;
-	}
-
-	bool Application::HandleOnWindowResize(uint32_t width, uint32_t height)
-	{
-		FJORD_CORE_INFO("Resize window ({0}, {0})", width, height);
-		return false;
 	}
 }

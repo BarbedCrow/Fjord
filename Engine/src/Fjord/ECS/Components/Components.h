@@ -12,6 +12,7 @@
 #include "Fjord/Render/Shader.h"
 #include "Fjord/Render/VertexArray.h"
 #include "Fjord/Render/Camera.h"
+#include "Fjord/Render/Texture.h"
 
 namespace Fjord
 {
@@ -40,12 +41,13 @@ namespace Fjord
 	{
 		Ref<VertexArray> VerticesArray;
 		Ref<Shader> shader; // replace with material
-
+		Ref<Texture2D> texture;
 		RenderComponent() = default;
-		RenderComponent(Ref<VertexArray> vArray, Ref<Shader> shader) 
+		RenderComponent(Ref<VertexArray> vArray, Ref<Shader> shader, Ref<Texture2D> texture = nullptr) 
 			:
 			VerticesArray(vArray),
-			shader(shader)
+			shader(shader),
+			texture(texture)
 		{}
 	};
 

@@ -45,8 +45,8 @@ project "Engine"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/vendor/glm/glm/**.hpp",
 		"%{prj.name}/vendor/glm/glm/**.inl",
-		"%{prj.name}/3rdparty/stb/**.h",
-		"%{prj.name}/3rdparty/stb/**.cpp",
+		"%{prj.name}/vendor/stb/**.h",
+		"%{prj.name}/vendor/stb/**.cpp",
 	}
 
 	includedirs
@@ -109,7 +109,9 @@ project "Sandbox"
 	files
 	{
 		"%{prj.name}/src/**.h",
-		"%{prj.name}/src/**.cpp"
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/assets/**.glsl",
+		"%{prj.name}/assets/**.png",
 	}
 
 	includedirs

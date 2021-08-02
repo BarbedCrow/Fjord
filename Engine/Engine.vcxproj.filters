@@ -7,8 +7,20 @@
     <Filter Include="src\Fjord">
       <UniqueIdentifier>{31C9EAB2-9D33-9F29-E671-50CF521B7D7E}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\Fjord\ECS">
+      <UniqueIdentifier>{FBEDB850-67AE-3487-30E9-7D049C687963}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Fjord\ECS\Components">
+      <UniqueIdentifier>{3040F416-1C65-4397-45B0-2827313442B5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Fjord\ECS\Systems">
+      <UniqueIdentifier>{020F336B-6E7B-EE65-376F-86C3A39A10CE}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src\Fjord\ImGui">
       <UniqueIdentifier>{1B9F0B63-872A-7927-903B-FC1BFC45D527}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Fjord\Render">
+      <UniqueIdentifier>{804602D9-6C3F-212B-9571-06B081C90037}</UniqueIdentifier>
     </Filter>
     <Filter Include="src\Fjord\core">
       <UniqueIdentifier>{49E0E767-35AE-DB6D-1E42-4C940AAFB7D2}</UniqueIdentifier>
@@ -40,13 +52,46 @@
     <Filter Include="vendor\glm\glm\gtx">
       <UniqueIdentifier>{B3A6A76B-9F8A-68C1-08EB-6214F4ED5243}</UniqueIdentifier>
     </Filter>
+    <Filter Include="vendor\stb">
+      <UniqueIdentifier>{8BD3C5A8-778B-07F6-E092-E051CC69A2E6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb\stb">
+      <UniqueIdentifier>{635F6677-4F2D-5A7D-38C1-CAA3242E36E2}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Fjord.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\Components.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h">
       <Filter>src\Fjord\ImGui</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Buffer.h">
+      <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Camera.h">
+      <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Shader.h">
+      <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Texture.h">
+      <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Render\VertexArray.h">
+      <Filter>src\Fjord\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\core\Application.h">
       <Filter>src\Fjord\core</Filter>
@@ -60,7 +105,19 @@
     <ClInclude Include="src\Fjord\core\Event.h">
       <Filter>src\Fjord\core</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\core\Input.h">
+      <Filter>src\Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\core\KeyCodes.h">
+      <Filter>src\Fjord\core</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\core\Log.h">
+      <Filter>src\Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\core\MouseButtonCodes.h">
+      <Filter>src\Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\core\Time.h">
       <Filter>src\Fjord\core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\core\Window.h">
@@ -1317,30 +1374,48 @@
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp">
       <Filter>vendor\glm\glm</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fjord\Render\Buffer.h" />
-    <ClInclude Include="src\Fjord\Render\VertexArray.h" />
-    <ClInclude Include="src\Fjord\Render\Shader.h" />
-    <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
-    <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
-    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
-    <ClInclude Include="src\Fjord\core\Time.h" />
-    <ClInclude Include="src\Fjord\core\Input.h" />
-    <ClInclude Include="src\Fjord\core\KeyCodes.h" />
-    <ClInclude Include="src\Fjord\core\MouseButtonCodes.h" />
-    <ClInclude Include="src\Fjord\Render\Camera.h" />
-    <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
+    <ClInclude Include="vendor\stb\stb\stb_image.h">
+      <Filter>vendor\stb\stb</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
       <Filter>src\Fjord\ImGui</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp">
       <Filter>src\Fjord\ImGui</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Buffer.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Camera.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Shader.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Texture.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Render\VertexArray.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\core\Application.cpp">
       <Filter>src\Fjord\core</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\core\Input.cpp">
+      <Filter>src\Fjord\core</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\core\Log.cpp">
+      <Filter>src\Fjord\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\core\Time.cpp">
       <Filter>src\Fjord\core</Filter>
     </ClCompile>
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp">
@@ -1349,13 +1424,8 @@
     <ClCompile Include="src\fjordpch.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fjord\Render\Buffer.cpp" />
-    <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
-    <ClCompile Include="src\Fjord\Render\Shader.cpp" />
-    <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
-    <ClCompile Include="src\Fjord\core\Time.cpp" />
-    <ClCompile Include="src\Fjord\core\Input.cpp" />
-    <ClCompile Include="src\Fjord\Render\Camera.cpp" />
-    <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
+    <ClCompile Include="vendor\stb\stb\stb_image.cpp">
+      <Filter>vendor\stb\stb</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

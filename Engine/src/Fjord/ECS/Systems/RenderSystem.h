@@ -17,7 +17,10 @@ namespace Fjord
 
 		void SetActiveCamera(CameraComponent& camera) { m_Camera = camera; }
 
+		virtual void Activate() override;
 		virtual void Update() override;
+	private:
+		bool HandleOnWindowResize(uint32_t width, uint32_t height);
 	private:
 		CameraComponent m_Camera;
 		glm::vec4 testColor = glm::vec4(1.f);

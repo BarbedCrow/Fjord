@@ -140,27 +140,29 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
-    <ClInclude Include="src\Fjord\Render\Camera.h" />
-    <ClInclude Include="src\Fjord\core\Input.h" />
-    <ClInclude Include="src\Fjord\core\KeyCodes.h" />
-    <ClInclude Include="src\Fjord\core\MouseButtonCodes.h" />
-    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
-    <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
-    <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
-    <ClInclude Include="src\Fjord\Render\Shader.h" />
     <ClInclude Include="src\Fjord.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h" />
+    <ClInclude Include="src\Fjord\Render\Buffer.h" />
+    <ClInclude Include="src\Fjord\Render\Camera.h" />
+    <ClInclude Include="src\Fjord\Render\Shader.h" />
+    <ClInclude Include="src\Fjord\Render\Texture.h" />
+    <ClInclude Include="src\Fjord\Render\VertexArray.h" />
     <ClInclude Include="src\Fjord\core\Application.h" />
     <ClInclude Include="src\Fjord\core\Core.h" />
     <ClInclude Include="src\Fjord\core\EntryPoint.h" />
     <ClInclude Include="src\Fjord\core\Event.h" />
+    <ClInclude Include="src\Fjord\core\Input.h" />
+    <ClInclude Include="src\Fjord\core\KeyCodes.h" />
     <ClInclude Include="src\Fjord\core\Log.h" />
+    <ClInclude Include="src\Fjord\core\MouseButtonCodes.h" />
+    <ClInclude Include="src\Fjord\core\Time.h" />
     <ClInclude Include="src\Fjord\core\Window.h" />
-    <ClInclude Include="src\Fjord\Render\Buffer.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\fjordpch.h" />
-    <ClInclude Include="src\Fjord\core\Time.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -576,25 +578,27 @@
     <ClInclude Include="vendor\glm\glm\vec3.hpp" />
     <ClInclude Include="vendor\glm\glm\vec4.hpp" />
     <ClInclude Include="vendor\glm\glm\vector_relational.hpp" />
-    <ClInclude Include="src\Fjord\Render\VertexArray.h" />
+    <ClInclude Include="vendor\stb\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
-    <ClCompile Include="src\Fjord\Render\Camera.cpp" />
-    <ClCompile Include="src\Fjord\core\Input.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
-    <ClCompile Include="src\Fjord\Render\Shader.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp" />
-    <ClCompile Include="src\Fjord\core\Application.cpp" />
-    <ClCompile Include="src\Fjord\core\Log.cpp" />
     <ClCompile Include="src\Fjord\Render\Buffer.cpp" />
+    <ClCompile Include="src\Fjord\Render\Camera.cpp" />
+    <ClCompile Include="src\Fjord\Render\Shader.cpp" />
+    <ClCompile Include="src\Fjord\Render\Texture.cpp" />
+    <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
+    <ClCompile Include="src\Fjord\core\Application.cpp" />
+    <ClCompile Include="src\Fjord\core\Input.cpp" />
+    <ClCompile Include="src\Fjord\core\Log.cpp" />
+    <ClCompile Include="src\Fjord\core\Time.cpp" />
     <ClCompile Include="src\Platform\Windows\WindowsWindow.cpp" />
     <ClCompile Include="src\fjordpch.cpp">
       <PrecompiledHeader>Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
-    <ClCompile Include="src\Fjord\core\Time.cpp" />
+    <ClCompile Include="vendor\stb\stb\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="vendor\glfw\GLFW.vcxproj">
