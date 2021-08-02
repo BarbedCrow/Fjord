@@ -1,6 +1,6 @@
 workspace "Fjord"
 	architecture "x64"
-	startproject "Sandbox"
+	startproject "Editor"
 
 	configurations
 	{
@@ -120,6 +120,57 @@ project "Sandbox"
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
+	}
+
+	links
+	{
+		"Engine"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines 
+		{
+			"FJORD_ENABLE_ASSERTS",
+			"FJORD_DEBUG"
+		}
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "FJORD_RELEASE"
+		optimize "on"
+
+	filter "configurations:Retail"
+		defines "FJORD_RETAIL"
+		optimize "on"
+
+project "Editor"
+	location "Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}") 
+	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/assets/**.glsl",
+		"%{prj.name}/assets/**.png",
+	}
+
+	includedirs
+	{
+		"Engine/src",
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.imgui}",
 	}
 
 	links

@@ -140,7 +140,6 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Fjord\Render\Framebuffer.h" />
     <ClInclude Include="src\Fjord.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
@@ -149,6 +148,7 @@
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h" />
     <ClInclude Include="src\Fjord\Render\Buffer.h" />
     <ClInclude Include="src\Fjord\Render\Camera.h" />
+    <ClInclude Include="src\Fjord\Render\Framebuffer.h" />
     <ClInclude Include="src\Fjord\Render\Shader.h" />
     <ClInclude Include="src\Fjord\Render\Texture.h" />
     <ClInclude Include="src\Fjord\Render\VertexArray.h" />
@@ -582,13 +582,13 @@
     <ClInclude Include="vendor\stb\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Fjord\Render\Framebuffer.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp" />
     <ClCompile Include="src\Fjord\Render\Buffer.cpp" />
     <ClCompile Include="src\Fjord\Render\Camera.cpp" />
+    <ClCompile Include="src\Fjord\Render\Framebuffer.cpp" />
     <ClCompile Include="src\Fjord\Render\Shader.cpp" />
     <ClCompile Include="src\Fjord\Render\Texture.cpp" />
     <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />

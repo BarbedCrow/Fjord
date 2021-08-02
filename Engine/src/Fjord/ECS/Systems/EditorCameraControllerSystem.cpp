@@ -28,11 +28,11 @@ namespace Fjord
 		{
 			if (Input::IsKeyPressed(FJORD_KEY_W))
 			{
-				camera.Camera->SetPosition(tr.Translation += glm::vec3(0, Time::GetDeltaTime() * camera.Speed, 0));
+				camera.Camera->SetPosition(tr.Translation -= glm::vec3(0, Time::GetDeltaTime() * camera.Speed, 0));
 			}
 			if (Input::IsKeyPressed(FJORD_KEY_S))
 			{
-				camera.Camera->SetPosition(tr.Translation -= glm::vec3(0, Time::GetDeltaTime() * camera.Speed, 0));
+				camera.Camera->SetPosition(tr.Translation += glm::vec3(0, Time::GetDeltaTime() * camera.Speed, 0));
 			}
 			if (Input::IsKeyPressed(FJORD_KEY_A))
 			{

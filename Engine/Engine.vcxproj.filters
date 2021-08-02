@@ -84,6 +84,9 @@
     <ClInclude Include="src\Fjord\Render\Camera.h">
       <Filter>src\Fjord\Render</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\Render\Framebuffer.h">
+      <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\Render\Shader.h">
       <Filter>src\Fjord\Render</Filter>
     </ClInclude>
@@ -1377,7 +1380,6 @@
     <ClInclude Include="vendor\stb\stb\stb_image.h">
       <Filter>vendor\stb\stb</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fjord\Render\Framebuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp">
@@ -1396,6 +1398,9 @@
       <Filter>src\Fjord\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\Render\Camera.cpp">
+      <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Render\Framebuffer.cpp">
       <Filter>src\Fjord\Render</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\Render\Shader.cpp">
@@ -1428,6 +1433,5 @@
     <ClCompile Include="vendor\stb\stb\stb_image.cpp">
       <Filter>vendor\stb\stb</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fjord\Render\Framebuffer.cpp" />
   </ItemGroup>
 </Project>

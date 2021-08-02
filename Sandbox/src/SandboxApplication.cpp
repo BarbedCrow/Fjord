@@ -54,6 +54,11 @@ public:
 	{
 
 	}
+
+	void UpdateInternal() override
+	{
+
+	}
 };
 
 Fjord::Application* Fjord::CreateApplication()

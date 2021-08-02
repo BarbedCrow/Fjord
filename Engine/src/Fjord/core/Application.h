@@ -23,6 +23,8 @@ namespace Fjord
 		Window* GetWindow() const { return m_Window.get(); }
 		inline static Application& Get() { return *s_Instance; }
 	protected:
+		virtual void UpdateInternal() = 0;
+	protected:
 		std::vector<Ref<GameSystem>> m_Systems;
 		entt::registry m_Registry;
 	private:

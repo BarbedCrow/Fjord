@@ -43,6 +43,7 @@ namespace Fjord
 			Time::SetTime(glfwGetTime());
 			m_Window->Update();
 			ImGuiSystem::Begin();
+			UpdateInternal();
 			for (auto sys : m_Systems)
 			{
 				if (sys->IsActive()) sys->Update();
