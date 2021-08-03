@@ -1,5 +1,7 @@
 #pragma once
 
+#include <string>
+
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 
@@ -16,11 +18,19 @@
 
 namespace Fjord
 {
+	struct UIDComponent
+	{
+		std::string UID;
+
+		UIDComponent() = default;
+		UIDComponent(const std::string& uid) : UID(uid) {}
+	};
+
 	struct TransformComponent
 	{
 		glm::vec3 Translation = { 0.0f, 0.0f ,0.0f };
 		glm::vec3 Rotation = { 0.0f, 0.0f ,0.0f };
-		glm::vec3 Scale = { 0.0f, 0.0f ,0.0f };
+		glm::vec3 Scale = { 1.0f, 1.0f ,1.0f };
 
 		TransformComponent() = default;
 		TransformComponent(const TransformComponent&) = default;

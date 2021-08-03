@@ -11,3 +11,6 @@
 [submodule "Engine/vendor/glm"]
 	path = Engine/vendor/glm
 	url = https://github.com/g-truc/glm
+[submodule "Engine/vendor/yaml"]
+	path = Engine/vendor/yaml
+	url = https://github.com/BarbedCrow/yaml-cpp

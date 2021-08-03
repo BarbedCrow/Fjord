@@ -19,10 +19,12 @@ IncludeDir["imgui"] = "Engine/vendor/imgui"
 IncludeDir["glm"] = "Engine/vendor/glm"
 IncludeDir["stb"] = "Engine/vendor/stb"
 IncludeDir["entt"] = "Engine/vendor/entt/include"
+IncludeDir["yaml"] = "Engine/vendor/yaml/include"
 
 include "Engine/vendor/glfw"
 include "Engine/vendor/glad"
 include "Engine/vendor/imgui"
+include "Engine/vendor/yaml"
 
 project "Engine"
 	location "Engine"
@@ -59,6 +61,7 @@ project "Engine"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.stb}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml}",
 	}
 
 	links
@@ -66,6 +69,7 @@ project "Engine"
 		"GLFW",
 		"glad",
 		"imgui",
+		"yaml",
 		"opengl32.lib"
 	}
 

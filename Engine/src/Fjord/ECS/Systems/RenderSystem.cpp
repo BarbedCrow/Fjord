@@ -22,9 +22,9 @@ namespace Fjord
 		glClearColor(0.1f, 0.1f, 0.1f, 1.f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		ImGui::Begin("TEST");
+		/*ImGui::Begin("TEST");
 		ImGui::ColorPicker4("Color", glm::value_ptr(testColor));
-		ImGui::End();
+		ImGui::End();*/
 
 		auto camView = m_Registry->view<CameraComponent>();
 		auto camera = camView.get<CameraComponent>(camView[0]);
@@ -41,15 +41,16 @@ namespace Fjord
 			}
 			render.shader->UploadUniformVec4("u_Color", testColor);
 			render.shader->UploadUniformMat4("u_ViewProjection", camera.Camera->GetViewProjectionMatrix());
-			glDrawElements(GL_TRIANGLES, render.VerticesArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
+			render.shader->UploadUniformMat4("u_Transform", tr.GetTransform());
 
-			if (m_FrameBuffer) m_FrameBuffer->Unbind();
+			glDrawElements(GL_TRIANGLES, render.VerticesArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 		}
+
+		if (m_FrameBuffer) m_FrameBuffer->Unbind();
 	}
 
 	bool RenderSystem::HandleOnWindowResize(uint32_t width, uint32_t height)
 	{
-		FJORD_CORE_INFO("Resize window ({0}, {0})", width, height);
 		auto camView = m_Registry->view<CameraComponent>();
 		auto camera = camView.get<CameraComponent>(camView[0]);
 

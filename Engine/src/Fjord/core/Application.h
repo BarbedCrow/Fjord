@@ -26,7 +26,6 @@ namespace Fjord
 		virtual void UpdateInternal() = 0;
 	protected:
 		std::vector<Ref<GameSystem>> m_Systems;
-		entt::registry m_Registry;
 	private:
 		Scope<Window> m_Window;
 

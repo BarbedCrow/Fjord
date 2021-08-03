@@ -21,6 +21,7 @@
     <ClCompile Include="src\EditorApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\HierarchyPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf">
@@ -65,5 +66,14 @@
     <None Include="assets\shaders\TextureShader.glsl">
       <Filter>assets\shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\EditorApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HierarchyPanel.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\test_texture.png" />
   </ItemGroup>
 </Project>

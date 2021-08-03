@@ -12,8 +12,7 @@
 	void main()
 	{
 		v_TexCoord = a_TexCoord;
-//		gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
-		gl_Position = u_ViewProjection * vec4(a_Position, 1.0);
+		gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
 	}
 
 #type fragment

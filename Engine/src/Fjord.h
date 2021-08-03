@@ -24,6 +24,10 @@
 #include "Fjord/ECS/Systems/EditorCameraControllerSystem.h"
 #include "Fjord/ECS/Systems/RenderSystem.h"
 #include "Fjord/ECS/Systems/GameSystem.h"
+#include "Fjord/ECS/Scene.h"
+#include "Fjord/ECS/SceneLoader.h"
 //END ECS
+
+#include "Fjord/Utils/PlatformUtils.h"
 
 #include "Fjord/core/Core.h"
