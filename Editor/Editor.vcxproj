@@ -131,8 +131,12 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="src\HierarchyPanel.cpp" />
+    <ClInclude Include="src\EditorApp.h" />
+    <ClInclude Include="src\HierarchyPanel.h" />
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\EditorApp.cpp" />
+    <ClCompile Include="src\HierarchyPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf" />
@@ -151,16 +155,12 @@
     <None Include="assets\shaders\TextureShader.glsl" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\textures\test_texture.png" />
+  </ItemGroup>
+  <ItemGroup>
     <ProjectReference Include="..\Engine\Engine.vcxproj">
       <Project>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</Project>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="src\HierarchyPanel.h" />
-    <ClInclude Include="src\EditorApp.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\test_texture.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

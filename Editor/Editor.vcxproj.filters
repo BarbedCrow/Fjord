@@ -13,15 +13,28 @@
     <Filter Include="assets\shaders">
       <UniqueIdentifier>{51CD2FD9-3D9B-23DF-262F-9405129CFF43}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\textures">
+      <UniqueIdentifier>{4B894D3B-B714-BBFF-C025-3EF42C301700}</UniqueIdentifier>
+    </Filter>
     <Filter Include="src">
       <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\EditorApp.h">
+      <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HierarchyPanel.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\EditorApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\HierarchyPanel.cpp" />
+    <ClCompile Include="src\HierarchyPanel.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf">
@@ -68,12 +81,8 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\EditorApp.h">
-      <Filter>src</Filter>
-    </ClInclude>
-    <ClInclude Include="src\HierarchyPanel.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="assets\textures\test_texture.png" />
+    <Image Include="assets\textures\test_texture.png">
+      <Filter>assets\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

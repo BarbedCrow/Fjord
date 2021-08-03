@@ -140,10 +140,10 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="src\Fjord\ECS\SceneLoader.h" />
-    <ClInclude Include="src\Fjord\ECS\Scene.h" />
     <ClInclude Include="src\Fjord.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
+    <ClInclude Include="src\Fjord\ECS\Scene.h" />
+    <ClInclude Include="src\Fjord\ECS\SceneLoader.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
@@ -154,6 +154,7 @@
     <ClInclude Include="src\Fjord\Render\Shader.h" />
     <ClInclude Include="src\Fjord\Render\Texture.h" />
     <ClInclude Include="src\Fjord\Render\VertexArray.h" />
+    <ClInclude Include="src\Fjord\Utils\PlatformUtils.h" />
     <ClInclude Include="src\Fjord\core\Application.h" />
     <ClInclude Include="src\Fjord\core\Core.h" />
     <ClInclude Include="src\Fjord\core\EntryPoint.h" />
@@ -166,7 +167,6 @@
     <ClInclude Include="src\Fjord\core\Window.h" />
     <ClInclude Include="src\Platform\Windows\WindowsWindow.h" />
     <ClInclude Include="src\fjordpch.h" />
-    <ClInclude Include="src\Fjord\Utils\PlatformUtils.h" />
     <ClInclude Include="vendor\glm\glm\common.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_features.hpp" />
     <ClInclude Include="vendor\glm\glm\detail\_fixes.hpp" />
@@ -585,8 +585,8 @@
     <ClInclude Include="vendor\stb\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="src\Fjord\ECS\SceneLoader.cpp" />
     <ClCompile Include="src\Fjord\ECS\Scene.cpp" />
+    <ClCompile Include="src\Fjord\ECS\SceneLoader.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp" />
