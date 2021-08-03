@@ -14,9 +14,6 @@ namespace Fjord
 	{
 		FJORD_CORE_ASSERT(m_Scene);
 
-		/*bool showDemo = true;
-		ImGui::ShowDemoWindow(&showDemo);*/
-
 		ImGuiTreeNodeFlags flags;
 		
 		ImGui::Begin("Hierarchy");

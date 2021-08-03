@@ -20,7 +20,7 @@ namespace Fjord
 
 		//glfwWindowHint(GLFW_SAMPLES, 4); // MULTISAMPLING
 		m_Window = glfwCreateWindow(m_Width, m_Height, m_Name.c_str(), nullptr, nullptr);
-
+		
 		glfwMakeContextCurrent(m_Window);
 		glfwSetWindowUserPointer(m_Window, this);
 		SetVSync(true);

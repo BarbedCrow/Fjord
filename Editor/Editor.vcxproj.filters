@@ -27,6 +27,7 @@
     <ClInclude Include="src\HierarchyPanel.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\InspectorPanel.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\EditorApp.cpp">
@@ -35,6 +36,7 @@
     <ClCompile Include="src\HierarchyPanel.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\InspectorPanel.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf">

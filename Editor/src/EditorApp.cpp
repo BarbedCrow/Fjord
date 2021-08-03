@@ -16,6 +16,7 @@ namespace Fjord
 		auto registry = m_Scene->GetRegistry();
 
 		m_HierarchyPanel.SetScene(m_Scene);
+		m_InspectorPanel.SetScene(m_Scene);
 
 		FramebufferSpecification fbSpec;
 		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth };
@@ -128,6 +129,11 @@ namespace Fjord
 
 		//LAYOUT
 		m_HierarchyPanel.Update();
+		m_InspectorPanel.Update(m_HierarchyPanel.GetSelectedEntity());
+		
+		//DEMO TEST
+		/*bool showDemo = true;
+		ImGui::ShowDemoWindow(&showDemo);*/
 
 		//VIEWPORT/////////////////////////////////////////////
 		//TODO: move to separated unit 

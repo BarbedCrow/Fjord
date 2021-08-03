@@ -39,7 +39,7 @@ namespace Fjord
 				render.shader->UploadUniformInt("u_Texture", 0);
 
 			}
-			render.shader->UploadUniformVec4("u_Color", testColor);
+			render.shader->UploadUniformVec4("u_Color", render.Color);
 			render.shader->UploadUniformMat4("u_ViewProjection", camera.Camera->GetViewProjectionMatrix());
 			render.shader->UploadUniformMat4("u_Transform", tr.GetTransform());
 

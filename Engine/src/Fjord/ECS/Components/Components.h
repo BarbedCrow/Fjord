@@ -52,11 +52,13 @@ namespace Fjord
 		Ref<VertexArray> VerticesArray;
 		Ref<Shader> shader; // replace with material
 		Ref<Texture2D> texture;
+		glm::vec4 Color;
 		RenderComponent() = default;
-		RenderComponent(Ref<VertexArray> vArray, Ref<Shader> shader, Ref<Texture2D> texture = nullptr) 
+		RenderComponent(Ref<VertexArray> vArray, Ref<Shader> shader, glm::vec4 color = { 1.0f, 1.0f, 1.0f, 1.0f }, Ref<Texture2D> texture = nullptr)
 			:
 			VerticesArray(vArray),
 			shader(shader),
+			Color(color),
 			texture(texture)
 		{}
 	};

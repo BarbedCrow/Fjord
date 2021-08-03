@@ -3,6 +3,7 @@
 #include <Fjord.h>
 
 #include "HierarchyPanel.h"
+#include "InspectorPanel.h"
 
 namespace Fjord
 {
@@ -20,6 +21,7 @@ namespace Fjord
 		Ref<Scene> m_Scene;
 
 		HierarchyPanel m_HierarchyPanel;
+		InspectorPanel m_InspectorPanel;
 
 		//TEMP
 		Ref<RenderSystem> m_RenderSystem;
