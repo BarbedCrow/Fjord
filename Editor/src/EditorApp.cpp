@@ -52,7 +52,7 @@ namespace Fjord
 	bool Editor::LoadScene(bool fromFile)
 	{
 		std::string filepath;
-		if (!fromFile || (filepath = FileDialogs::OpenFile("Fjord Scene (*.fscene)\0*.fscene\0")) != "")
+		if (!fromFile || !(filepath = FileDialogs::OpenFile("Fjord Scene (*.fscene)\0*.fscene\0")).empty())
 		{
 			*m_Scene = Scene(filepath);
 			auto registry = m_Scene->GetRegistry();
@@ -65,8 +65,31 @@ namespace Fjord
 		return false;
 	}
 
+	void Editor::ProcessInputs()
+	{
+		bool ctrlPressed = Input::IsKeyPressed(FJORD_KEY_LEFT_CONTROL) || Input::IsKeyPressed(FJORD_KEY_RIGHT_CONTROL);
+		bool shiftPressed = Input::IsKeyPressed(FJORD_KEY_LEFT_SHIFT) || Input::IsKeyPressed(FJORD_KEY_RIGHT_SHIFT);
+		bool altPressed = Input::IsKeyPressed(FJORD_KEY_LEFT_ALT) || Input::IsKeyPressed(FJORD_KEY_RIGHT_ALT);
+		
+		//SAVE AND LOAD SCENE
+		if (ctrlPressed && shiftPressed && Input::IsKeyPressed(FJORD_KEY_S))
+		{
+			SaveScene();
+		}
+		else if (ctrlPressed && Input::IsKeyPressed(FJORD_KEY_S) && !m_Scene->GetPath().empty())
+		{
+			SaveScene(m_Scene->GetPath());
+		}
+		else if (ctrlPressed && Input::IsKeyPressed(FJORD_KEY_O))
+		{
+			LoadScene();
+		}
+	}
+
 	void Editor::UpdateInternal()
 	{
+		ProcessInputs();
+
 		static bool dockOpen = true;
 		static bool opt_fullscreen = true;
 		static bool opt_padding = false;

@@ -17,6 +17,8 @@ namespace Fjord
 	private:
 		void SaveScene(const std::string& path = "");
 		bool LoadScene(bool fromFile = true);
+		
+		void ProcessInputs();
 	private:
 		Ref<Scene> m_Scene;
 
