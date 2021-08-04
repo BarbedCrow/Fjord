@@ -2,12 +2,14 @@
 
 #include "GameSystem.h"
 
+#include "Fjord/ECS/Scene.h"
+
 namespace Fjord
 {
 	class EditorCameraControllerSystem : public GameSystem
 	{
 	public:
-		EditorCameraControllerSystem(entt::registry* registry) : GameSystem(registry) {}
+		EditorCameraControllerSystem(Ref<Scene>& scene) : GameSystem(scene) {}
 		virtual ~EditorCameraControllerSystem() override {}
 
 		virtual void Activate() override;

@@ -9,6 +9,11 @@ namespace Fjord
 
 	}
 
+	Scene::Scene(std::string path) : m_Path(path)
+	{
+
+	}
+
 	Scene::~Scene()
 	{
 

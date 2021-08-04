@@ -16,7 +16,7 @@ namespace Fjord
 		virtual void UpdateInternal() override;
 	private:
 		void SaveScene(const std::string& path = "");
-		bool LoadScene();
+		bool LoadScene(bool fromFile = true);
 	private:
 		Ref<Scene> m_Scene;
 

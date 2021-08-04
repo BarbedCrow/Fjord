@@ -2,12 +2,14 @@
 
 #include <entt/entt.hpp>
 
+#include "Fjord/ECS/Scene.h"
+
 namespace Fjord
 {
 	class GameSystem
 	{
 	public:
-		GameSystem(entt::registry* registry, bool isActive = true) : m_Registry(registry), m_Active(isActive) {}
+		GameSystem(Ref<Scene>& scene, bool isActive = true) : m_Scene(scene), m_Active(isActive) {}
 		virtual ~GameSystem() {}
 
 		virtual void Activate() { m_Active = true; }
@@ -17,7 +19,7 @@ namespace Fjord
 
 		virtual void Update() = 0;
 	protected:
-		entt::registry* m_Registry;
+		Ref<Scene> m_Scene;
 	private:
 		bool m_Active = false;
 	};

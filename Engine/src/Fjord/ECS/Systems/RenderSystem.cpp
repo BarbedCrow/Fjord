@@ -17,6 +17,7 @@ namespace Fjord
 
 	void RenderSystem::Update()
 	{
+		auto registry = m_Scene->GetRegistry();
 		if (m_FrameBuffer) m_FrameBuffer->Bind();
 
 		glClearColor(0.1f, 0.1f, 0.1f, 1.f);
@@ -26,10 +27,10 @@ namespace Fjord
 		ImGui::ColorPicker4("Color", glm::value_ptr(testColor));
 		ImGui::End();*/
 
-		auto camView = m_Registry->view<CameraComponent>();
+		auto camView = registry->view<CameraComponent>();
 		auto camera = camView.get<CameraComponent>(camView[0]);
 
-		for (auto&& [entity, tr, render] : m_Registry->view<TransformComponent, RenderComponent>().each())
+		for (auto&& [entity, tr, render] : registry->view<TransformComponent, RenderComponent>().each())
 		{
 			render.VerticesArray->Bind();
 			render.shader->Bind();
@@ -51,7 +52,8 @@ namespace Fjord
 
 	bool RenderSystem::HandleOnWindowResize(uint32_t width, uint32_t height)
 	{
-		auto camView = m_Registry->view<CameraComponent>();
+		auto registry = m_Scene->GetRegistry();
+		auto camView = registry->view<CameraComponent>();
 		auto camera = camView.get<CameraComponent>(camView[0]);
 
 		camera.AspectRatio = (float)width / (float)height;

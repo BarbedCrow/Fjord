@@ -10,7 +10,7 @@ namespace Fjord
 		HierarchyPanel();
 		~HierarchyPanel() = default;
 
-		void SetScene(Ref<Scene> scene) { m_Scene = scene; }
+		void SetScene(const Ref<Scene>& scene) { m_Scene = scene; }
 
 		const entt::entity& GetSelectedEntity() const { return m_SelectedEntt; }
 

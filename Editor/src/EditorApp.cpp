@@ -24,18 +24,13 @@ namespace Fjord
 		fbSpec.Height = 720;
 		m_Framebuffer = CreateRef<Framebuffer>(fbSpec);
 
-		m_Systems.push_back(CreateRef<EditorCameraControllerSystem>(registry));
-		m_RenderSystem = CreateRef<RenderSystem>(registry);
+		m_Systems.push_back(CreateRef<EditorCameraControllerSystem>(m_Scene));
+		m_RenderSystem = CreateRef<RenderSystem>(m_Scene);
 		m_Systems.push_back(m_RenderSystem);
 
 		m_RenderSystem->SetFramebuffer(m_Framebuffer);
 
-		//ENTITIES
-
-		//for future camera creation check that there is no active camera
-		auto cameraEntt = registry->create();
-		registry->emplace<TransformComponent>(cameraEntt);
-		registry->emplace<CameraComponent>(cameraEntt, GetWindow()->GetAspectRatio());
+		LoadScene(false);
 	}
 
 	Editor::~Editor()
@@ -54,14 +49,19 @@ namespace Fjord
 		}
 	}
 
-	bool Editor::LoadScene()
+	bool Editor::LoadScene(bool fromFile)
 	{
-		std::string filepath = FileDialogs::OpenFile("Fjord Scene (*.fscene)\0*.fscene\0");
-		if (!filepath.empty())
+		std::string filepath;
+		if (!fromFile || (filepath = FileDialogs::OpenFile("Fjord Scene (*.fscene)\0*.fscene\0")) != "")
 		{
-			SceneLoader(m_Scene).Load(filepath);
-			return true;
+			*m_Scene = Scene(filepath);
+			auto registry = m_Scene->GetRegistry();
+			auto cameraEntt = registry->create();
+			registry->emplace<TransformComponent>(cameraEntt);
+			registry->emplace<CameraComponent>(cameraEntt, GetWindow()->GetAspectRatio());
+			return filepath.empty() ? true : SceneLoader(m_Scene).Load(filepath);
 		}
+		
 		return false;
 	}
 

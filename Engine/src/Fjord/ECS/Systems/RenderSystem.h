@@ -9,12 +9,14 @@
 
 #include "Fjord/Render/Framebuffer.h"
 
+#include "Fjord/ECS/Scene.h"
+
 namespace Fjord
 {
 	class RenderSystem : public GameSystem
 	{
 	public:
-		RenderSystem(entt::registry* registry) : GameSystem(registry) {}
+		RenderSystem(Ref<Scene>& scene) : GameSystem(scene) {}
 		virtual ~RenderSystem() override {}
 
 		void SetActiveCamera(CameraComponent& camera) { m_Camera = camera; }
