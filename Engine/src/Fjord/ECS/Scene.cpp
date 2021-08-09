@@ -1,6 +1,8 @@
 #include "fjordpch.h"
 #include "Scene.h"
 
+#include "Fjord/ECS/Components/Components.h"
+
 namespace Fjord
 {
 
@@ -17,6 +19,13 @@ namespace Fjord
 	Scene::~Scene()
 	{
 
+	}
+
+	entt::entity Scene::CreateEmptyEntity()
+	{
+		auto entity = m_Registry.create();
+		m_Registry.emplace<UIDComponent>(entity, "entity");
+		return entity;
 	}
 
 }

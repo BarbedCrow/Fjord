@@ -13,9 +13,9 @@ namespace Fjord
 	void InspectorPanel::Update(const entt::entity& entt)
 	{
 		ImGui::Begin("Inspector");
-		if (entt != entt::null)
+		auto registry = m_Scene->GetRegistry();
+		if (registry->valid(entt))
 		{
-			auto registry = m_Scene->GetRegistry();
 			const auto& id = registry->get<UIDComponent>(entt);
 			ImGui::Text(id.UID.c_str());
 			ImGui::Separator();

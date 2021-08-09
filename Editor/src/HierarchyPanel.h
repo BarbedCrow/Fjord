@@ -19,6 +19,7 @@ namespace Fjord
 		Ref<Scene> m_Scene;
 
 		entt::entity m_SelectedEntt = entt::null;
+		bool m_ItemWasRightClicked = false;
 
 		bool m_RenameActive = false;
 	};

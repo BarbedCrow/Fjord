@@ -10,13 +10,3 @@ Entities:
         Scale: [1.39999998, 1.5, 1]
       - Component: 538785409
         id: red
-  - Entity: 1231232
-    Components:
-      - Component: 13514207
-        Color: [0.147314429, 0.706563711, 0.15595147, 1]
-      - Component: 2832165387
-        Translation: [2.70000005, 0, 0]
-        Rotation: [0, 0, 1]
-        Scale: [1, 1, 1]
-      - Component: 538785409
-        id: color
