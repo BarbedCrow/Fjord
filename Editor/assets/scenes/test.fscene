@@ -1,16 +1,22 @@
 Scene: Untitled
 Entities:
-  - Entity: quad
-    TransformComponent:
-      Translation: [0, 0, 0]
-      Rotation: [0, 0, 2.29999995]
-      Scale: [1.39999998, 2.0999999, 1]
-    RenderComponent:
-      {}
-  - Entity: quad2
-    TransformComponent:
-      Translation: [2.5999999, 0.5, 0]
-      Rotation: [0, 0, 0.5]
-      Scale: [1, 1, 1]
-    RenderComponent:
-      {}
+  - Entity: 1231232
+    Components:
+      - Component: 13514207
+        Color: [0.741312742, 0.269047856, 0.269047856, 1]
+      - Component: 2832165387
+        Translation: [0, 0, 0]
+        Rotation: [0, 0, 2.29999995]
+        Scale: [1.39999998, 1.5, 1]
+      - Component: 538785409
+        id: red
+  - Entity: 1231232
+    Components:
+      - Component: 13514207
+        Color: [0.0501930714, 1, 0.262891173, 1]
+      - Component: 2832165387
+        Translation: [2.5999999, 0.5, 0]
+        Rotation: [0, 0, 0.5]
+        Scale: [1, 1, 1]
+      - Component: 538785409
+        id: green

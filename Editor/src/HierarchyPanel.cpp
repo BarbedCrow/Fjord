@@ -17,7 +17,7 @@ namespace Fjord
 		ImGuiTreeNodeFlags flags;
 		
 		ImGui::Begin("Hierarchy");
-		auto view = m_Scene->GetRegistry()->view<UIDComponent>();
+		auto view = m_Scene->GetRegistry()->view<UIDComponent>(entt::exclude<EditorComponent>);
 		for (auto entt : view)
 		{
 			flags = ImGuiTreeNodeFlags_Leaf | ImGuiTreeNodeFlags_NoTreePushOnOpen | ImGuiTreeNodeFlags_SpanFullWidth; //TEMP. Rework after adding parents and children for entities

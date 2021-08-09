@@ -23,26 +23,22 @@ namespace Fjord
 		glClearColor(0.1f, 0.1f, 0.1f, 1.f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-		/*ImGui::Begin("TEST");
-		ImGui::ColorPicker4("Color", glm::value_ptr(testColor));
-		ImGui::End();*/
-
 		auto camView = registry->view<CameraComponent>();
-		auto camera = camView.get<CameraComponent>(camView[0]);
+		CameraComponent& camera = camView.get<CameraComponent>(camView[0]);
 
 		for (auto&& [entity, tr, render] : registry->view<TransformComponent, RenderComponent>().each())
 		{
 			render.VerticesArray->Bind();
-			render.shader->Bind();
-			if (render.texture)
+			render.Material->Bind();
+			if (render.Texture)
 			{
-				render.texture->Bind();
-				render.shader->UploadUniformInt("u_Texture", 0);
+				render.Texture->Bind();
+				render.Material->UploadUniformInt("u_Texture", 0);
 
 			}
-			render.shader->UploadUniformVec4("u_Color", render.Color);
-			render.shader->UploadUniformMat4("u_ViewProjection", camera.Camera->GetViewProjectionMatrix());
-			render.shader->UploadUniformMat4("u_Transform", tr.GetTransform());
+			render.Material->UploadUniformVec4("u_Color", render.Color);
+			render.Material->UploadUniformMat4("u_ViewProjection", camera.Camera->GetViewProjectionMatrix());
+			render.Material->UploadUniformMat4("u_Transform", tr.GetTransform());
 
 			glDrawElements(GL_TRIANGLES, render.VerticesArray->GetIndexBuffer()->GetCount(), GL_UNSIGNED_INT, nullptr);
 		}
@@ -54,7 +50,7 @@ namespace Fjord
 	{
 		auto registry = m_Scene->GetRegistry();
 		auto camView = registry->view<CameraComponent>();
-		auto camera = camView.get<CameraComponent>(camView[0]);
+		CameraComponent& camera = camView.get<CameraComponent>(camView[0]);
 
 		camera.AspectRatio = (float)width / (float)height;
 		camera.Camera->SetProjectionMatrix(-camera.AspectRatio * camera.ZoomLevel, camera.AspectRatio * camera.ZoomLevel, -camera.ZoomLevel, camera.ZoomLevel);

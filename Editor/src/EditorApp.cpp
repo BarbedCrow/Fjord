@@ -3,6 +3,8 @@
 #include <Fjord/core/EntryPoint.h>
 #include <imgui.h>
 
+using namespace entt::literals;
+
 namespace Fjord
 {
 	Application* CreateApplication()
@@ -13,7 +15,6 @@ namespace Fjord
 	Editor::Editor()
 	{
 		m_Scene = CreateRef<Scene>();
-		auto registry = m_Scene->GetRegistry();
 
 		m_HierarchyPanel.SetScene(m_Scene);
 		m_InspectorPanel.SetScene(m_Scene);
@@ -29,6 +30,13 @@ namespace Fjord
 		m_Systems.push_back(m_RenderSystem);
 
 		m_RenderSystem->SetFramebuffer(m_Framebuffer);
+		
+		//REGISTER components. Move to separated function
+		UIDComponent::Register<UIDComponent>();
+		TransformComponent::Register<TransformComponent>();
+		RenderComponent::Register<RenderComponent>();
+		CameraComponent::Register<CameraComponent>();
+		EditorComponent::Register<EditorComponent>();
 
 		LoadScene(false);
 	}
@@ -57,7 +65,9 @@ namespace Fjord
 			*m_Scene = Scene(filepath);
 			auto registry = m_Scene->GetRegistry();
 			auto cameraEntt = registry->create();
+			registry->emplace<UIDComponent>(cameraEntt, "EditorCamera");
 			registry->emplace<TransformComponent>(cameraEntt);
+			registry->emplace<EditorComponent>(cameraEntt);
 			registry->emplace<CameraComponent>(cameraEntt, GetWindow()->GetAspectRatio());
 			return filepath.empty() ? true : SceneLoader(m_Scene).Load(filepath);
 		}

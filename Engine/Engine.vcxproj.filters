@@ -69,6 +69,9 @@
     <ClInclude Include="src\Fjord\ECS\Components\Components.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\TransformComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Scene.h">
       <Filter>src\Fjord\ECS</Filter>
     </ClInclude>
@@ -106,6 +109,9 @@
       <Filter>src\Fjord\Render</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\Utils\PlatformUtils.h">
+      <Filter>src\Fjord\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Utils\YAMLUtils.h">
       <Filter>src\Fjord\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\core\Application.h">
@@ -1392,6 +1398,16 @@
     <ClInclude Include="vendor\stb\stb\stb_image.h">
       <Filter>vendor\stb\stb</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\Component.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\RenderComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\CameraComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Entity.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\UIDComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Scene.cpp">
@@ -1454,5 +1470,18 @@
     <ClCompile Include="vendor\stb\stb\stb_image.cpp">
       <Filter>vendor\stb\stb</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\RenderComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Utils\YAMLUtils.cpp">
+      <Filter>src\Fjord\Utils</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\CameraComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Entity.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />
   </ItemGroup>
 </Project>

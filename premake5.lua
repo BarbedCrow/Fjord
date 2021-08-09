@@ -176,6 +176,7 @@ project "Editor"
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
 		"%{IncludeDir.imgui}",
+		"%{IncludeDir.yaml}",
 	}
 
 	links
