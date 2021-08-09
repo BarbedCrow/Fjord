@@ -1,6 +1,9 @@
 #include "fjordpch.h"
 #include "RenderComponent.h"
 
+#include <imgui.h>
+#include <glm/gtc/type_ptr.hpp>
+
 #include "Fjord/Utils/YAMLUtils.h"
 
 namespace Fjord
@@ -36,6 +39,15 @@ namespace Fjord
 	void RenderComponent::Save(YAML::Emitter& out)
 	{
 		out << YAML::Key << "Color" << YAML::Value << Color;
+	}
+
+	void RenderComponent::EditorDisplay()
+	{
+		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_SpanFullWidth;
+		if (ImGui::CollapsingHeader("Render", treeNodeFlags))
+		{
+			ImGui::ColorEdit4("Color", glm::value_ptr(Color));
+		}
 	}
 
 }

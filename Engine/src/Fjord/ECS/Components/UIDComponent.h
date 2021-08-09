@@ -16,5 +16,6 @@ namespace Fjord
 
 		virtual void Load(YAML::Node& entt) override;
 		virtual void Save(YAML::Emitter& out) override;
+		virtual void EditorDisplay() override {};
 	};
 }

@@ -1,10 +1,10 @@
 #pragma once
 
 #include <yaml-cpp/yaml.h>
+#include <entt/entt.hpp>
 
 #include "Fjord/core/Core.h"
 
-#include <entt/entt.hpp>
 
 using namespace entt::literals;
 
@@ -20,6 +20,7 @@ namespace Fjord
 
 		virtual void Load(YAML::Node& entt) = 0;
 		virtual void Save(YAML::Emitter& out) = 0;
+		virtual void EditorDisplay() = 0;
 
 		template<typename Type>
 		static Type& Get(entt::registry& registry, entt::entity entity) {
@@ -40,12 +41,14 @@ namespace Fjord
 				.func<&Component::Create<Type>, entt::as_ref_t> (CREATE_FUNC)
 				.func<&Component::Get<Type>, entt::as_ref_t> (GET_FUNC)
 				.func<&Type::Save, entt::as_ref_t> (SAVE_FUNC)
-				.func<&Type::Load, entt::as_ref_t > (LOAD_FUNC);
+				.func<&Type::Load, entt::as_ref_t > (LOAD_FUNC)
+				.func<&Type::EditorDisplay> (EDITOR_DISPLAY_FUNC);
 		}
 	public:
 		static const uint32_t CREATE_FUNC;
 		static const uint32_t GET_FUNC;
 		static const uint32_t SAVE_FUNC;
 		static const uint32_t LOAD_FUNC;
+		static const uint32_t EDITOR_DISPLAY_FUNC;
 	};
 }
