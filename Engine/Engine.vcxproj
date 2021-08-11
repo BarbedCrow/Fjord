@@ -140,6 +140,7 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\Fjord\ECS\Components\ComponentProxy.h" />
     <ClInclude Include="src\Fjord\ECS\Components\CameraComponent.h" />
     <ClInclude Include="src\Fjord.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Component.h" />
@@ -595,6 +596,7 @@
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\CameraComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\RenderComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Entity.cpp" />

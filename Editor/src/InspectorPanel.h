@@ -14,6 +14,8 @@ namespace Fjord
 
 		void Update(const entt::entity& entt);
 	private:
+		void DisplayComponent(Component* component);
+	private:
 		Ref<Scene> m_Scene;
 	};
 }

@@ -1408,6 +1408,7 @@
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Entity.h" />
     <ClInclude Include="src\Fjord\ECS\Components\UIDComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\ComponentProxy.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Scene.cpp">
@@ -1483,5 +1484,6 @@
     <ClCompile Include="src\Fjord\ECS\Entity.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
   </ItemGroup>
 </Project>

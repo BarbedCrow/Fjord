@@ -12,17 +12,15 @@ namespace Fjord
 	class RenderComponent : public Component
 	{
 	public:
-		RenderComponent() : Component() {}
+		RenderComponent();
 		RenderComponent(const RenderComponent&) = default;
-
-		virtual void Load(YAML::Node& entt) override;
-		virtual void Save(YAML::Emitter& out) override;
-		virtual void EditorDisplay() override;
 	public:
 
 		Ref<VertexArray> VerticesArray;
 		Ref<Shader> Material; // replace with material
 		Ref<Texture2D> Texture;
 		glm::vec4 Color = {1.0f, 1.0f, 1.0f, 1.0f};
+	protected:
+		virtual void SetupProxy() override;
 	};
 }

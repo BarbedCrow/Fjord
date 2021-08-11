@@ -11,16 +11,13 @@ namespace Fjord
 	class CameraComponent : public Component
 	{
 	public:
-		CameraComponent() : Component() {}
+		CameraComponent() = default;
 		CameraComponent(float aspectRatio)
 			:
 			AspectRatio(aspectRatio),
 			Camera(CreateRef<OrthographicCamera>(-AspectRatio * ZoomLevel, AspectRatio * ZoomLevel, -ZoomLevel, ZoomLevel))
 		{}
 
-		virtual void Load(YAML::Node& entt) override;
-		virtual void Save(YAML::Emitter& out) override;
-		virtual void EditorDisplay() override {}
 	public:
 		Ref<OrthographicCamera> Camera;
 
@@ -29,6 +26,8 @@ namespace Fjord
 		float ZoomLevel = 1.0f;
 
 		float AspectRatio;
+	protected:
+		virtual void SetupProxy() override {}
 	};
 }
 

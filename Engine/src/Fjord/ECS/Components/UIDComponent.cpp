@@ -3,16 +3,15 @@
 
 namespace Fjord
 {
-
-	void UIDComponent::Load(YAML::Node& entt)
+	UIDComponent::UIDComponent()
 	{
-		auto uidEnt = entt["id"];
-		UID = uidEnt ? uidEnt.as<std::string>() : UID;
+		SetupProxy();
 	}
 
-	void UIDComponent::Save(YAML::Emitter& out)
+	void UIDComponent::SetupProxy()
 	{
-		out << YAML::Key << "id" << YAML::Value << UID;
+		m_Proxy.Name = "UID";
+		m_Proxy.Members.push_back(CreateRef<ComponentMemberString>("id", &UID));
 	}
 
 }

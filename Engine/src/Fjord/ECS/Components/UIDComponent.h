@@ -9,13 +9,12 @@ namespace Fjord
 	class UIDComponent : public Component
 	{
 	public:
-		std::string UID;
-
-		UIDComponent() : Component() {}
+		UIDComponent();
+		UIDComponent(const UIDComponent&) = default;
 		UIDComponent(const std::string& uid) : UID(uid) {}
-
-		virtual void Load(YAML::Node& entt) override;
-		virtual void Save(YAML::Emitter& out) override;
-		virtual void EditorDisplay() override {};
+	public:
+		std::string UID;
+	protected:
+		virtual void SetupProxy() override;
 	};
 }

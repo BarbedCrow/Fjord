@@ -14,13 +14,9 @@ namespace Fjord
 	
 	{
 	public:
-		TransformComponent() : Component() {}
+		TransformComponent();
 		TransformComponent(const TransformComponent&) = default;
 		TransformComponent(const glm::vec3& translation) : Translation(translation) {}
-
-		virtual void Load(YAML::Node& entt) override;
-		virtual void Save(YAML::Emitter& out) override;
-		virtual void EditorDisplay() override;
 
 		glm::mat4 GetTransform() const;
 
@@ -30,5 +26,7 @@ namespace Fjord
 		glm::vec3 Translation = { 0.0f, 0.0f ,0.0f };
 		glm::vec3 Rotation = { 0.0f, 0.0f ,0.0f }; //radians
 		glm::vec3 Scale = { 1.0f, 1.0f ,1.0f };
+	protected:
+		virtual void SetupProxy() override;
 	};
 }

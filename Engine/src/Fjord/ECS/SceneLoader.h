@@ -5,6 +5,8 @@
 #include "Fjord/core/Core.h"
 #include "Fjord/ECS/Scene.h"
 
+#include "Fjord/ECS/Components/Components.h"
+
 namespace Fjord
 {
 	class SceneLoader
@@ -18,6 +20,9 @@ namespace Fjord
 		void Save(const std::string& path);
 		void SaveRuntime(const std::string& path);
 
+	protected:
+		void LoadComponent(Component* component, YAML::Node& data);
+		void SaveComponent(Component* component, YAML::Emitter& out);
 	private:
 		Ref<Scene> m_Scene;
 	};

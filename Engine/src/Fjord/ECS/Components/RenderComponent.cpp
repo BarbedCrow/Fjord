@@ -8,8 +8,10 @@
 
 namespace Fjord
 {
-	void RenderComponent::Load(YAML::Node& entt)
+	RenderComponent::RenderComponent()
 	{
+		SetupProxy();
+
 		float vertices[5 * 4] = {
 			-0.5f, -0.5f, 0.0f, 0.0f, 0.0f,
 			 0.5f, -0.5f, 0.0f, 1.0f, 0.0f,
@@ -32,22 +34,12 @@ namespace Fjord
 		VerticesArray->SetIndexBuffer(iBuffer);
 
 		Material = CreateRef <Shader>("assets/shaders/FlatColorShader.glsl");
-		auto colorEnt = entt["Color"];
-		Color = colorEnt ? colorEnt.as<glm::vec4>() : Color;
 	}
 
-	void RenderComponent::Save(YAML::Emitter& out)
+	void RenderComponent::SetupProxy()
 	{
-		out << YAML::Key << "Color" << YAML::Value << Color;
-	}
-
-	void RenderComponent::EditorDisplay()
-	{
-		const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_SpanFullWidth;
-		if (ImGui::CollapsingHeader("Render", treeNodeFlags))
-		{
-			ImGui::ColorEdit4("Color", glm::value_ptr(Color));
-		}
+		m_Proxy.Name = "Render";
+		m_Proxy.Members.push_back(CreateRef<ComponentMemberColorRGBA>("Color", &Color));
 	}
 
 }

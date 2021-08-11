@@ -5,6 +5,7 @@
 
 #include <yaml-cpp/yaml.h>
 
+#include "Fjord/Utils/YAMLUtils.h"
 #include "Fjord/ECS/Components/Components.h"
 
 namespace Fjord
@@ -31,7 +32,8 @@ namespace Fjord
 						entt::id_type id = std::stoul(typeIdStr.c_str());
 						auto compType = entt::resolve(id);
 						auto compMeta = compType.func(Component::CREATE_FUNC).invoke({}, entt::forward_as_meta(*registry), entt);
-						compType.func(Component::LOAD_FUNC).invoke(compMeta, entt::forward_as_meta(comp));
+						auto component = compMeta.try_cast<Component>();
+						LoadComponent(component, comp);
 					}
 				}
 			}
@@ -71,7 +73,8 @@ namespace Fjord
 					out << YAML::BeginMap;
 					out << YAML::Key << "Component" << YAML::Value << type.id();
 					auto any = type.func(Component::GET_FUNC).invoke({}, entt::forward_as_meta(*registry), entt);
-					type.func(Component::SAVE_FUNC).invoke(any, entt::forward_as_meta(out));
+					auto component = any.try_cast<Component>();
+					SaveComponent(component, out);
 					out << YAML::EndMap;
 				});
 			out << YAML::EndSeq; // Components
@@ -92,4 +95,53 @@ namespace Fjord
 		FJORD_CORE_ASSERT(false);
 	}
 	
+	void SceneLoader::LoadComponent(Component* component, YAML::Node& data)
+	{
+		auto proxy = component->GetProxy();
+		auto members = proxy.Members;
+		if (members.size() == 0) return;
+
+		for (auto& member : members)
+		{
+			if (auto castMember = std::dynamic_pointer_cast<ComponentMemberVec3>(member))
+			{
+				auto val = data[member->Name];
+				if (val) *castMember->Value = val.as<glm::vec3>();
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberColorRGBA>(member))
+			{
+				auto val = data[member->Name];
+				if (val) *castMember->Value = val.as<glm::vec4>();
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberString>(member))
+			{
+				auto val = data[member->Name];
+				if (val) *castMember->Value = val.as<std::string>();
+			}
+		}
+	}
+
+	void SceneLoader::SaveComponent(Component* component, YAML::Emitter& out)
+	{
+		auto proxy = component->GetProxy();
+		auto members = proxy.Members;
+		if (members.size() == 0) return;
+
+		for (auto& member : members)
+		{
+			if (auto castMember = std::dynamic_pointer_cast<ComponentMemberVec3>(member))
+			{
+				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberColorRGBA>(member))
+			{
+				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberString>(member))
+			{
+				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
+			}
+		}
+	}
+
 }
