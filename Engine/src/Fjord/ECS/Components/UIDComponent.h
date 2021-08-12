@@ -11,7 +11,7 @@ namespace Fjord
 	public:
 		UIDComponent();
 		UIDComponent(const UIDComponent&) = default;
-		UIDComponent(const std::string& uid) : UID(uid) {}
+		UIDComponent(const std::string& uid) : UIDComponent() { UID = uid; }
 	public:
 		std::string UID;
 	protected:

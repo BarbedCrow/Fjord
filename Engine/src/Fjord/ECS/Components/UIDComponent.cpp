@@ -10,7 +10,7 @@ namespace Fjord
 
 	void UIDComponent::SetupProxy()
 	{
-		m_Proxy.Name = "UID";
+		m_Proxy.Name = entt::resolve<UIDComponent>().info().name();
 		m_Proxy.Members.push_back(CreateRef<ComponentMemberString>("id", &UID));
 	}
 

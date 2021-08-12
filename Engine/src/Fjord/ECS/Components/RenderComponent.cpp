@@ -38,7 +38,7 @@ namespace Fjord
 
 	void RenderComponent::SetupProxy()
 	{
-		m_Proxy.Name = "Render";
+		m_Proxy.Name = entt::resolve<RenderComponent>().info().name();
 		m_Proxy.Members.push_back(CreateRef<ComponentMemberColorRGBA>("Color", &Color));
 	}
 

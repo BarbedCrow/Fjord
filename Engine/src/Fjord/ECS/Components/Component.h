@@ -25,6 +25,8 @@ namespace Fjord
 		//you could create, save, load, display it without referring to particular component class
 		template<typename Type>
 		static void Register();
+
+		static const std::unordered_map<std::string, uint32_t>& GetMetaComponentsStorage() { return s_MetaComponentsStorage; }
 	public:
 		static const uint32_t CREATE_FUNC;
 		static const uint32_t GET_FUNC;
@@ -36,6 +38,9 @@ namespace Fjord
 		ComponentProxy m_Proxy;
 		std::vector<ComponentMember> m_OuterData;
 	private:
+
+		//Holds meta data in format [name, hash to resolve meta info] for all registered components
+		static std::unordered_map<std::string, uint32_t> s_MetaComponentsStorage;
 
 		//DON'T use this method without necessity
 		//It is used to create and emplace the component for given entity during deserialization
@@ -55,6 +60,10 @@ namespace Fjord
 			.base<Component>()
 			.func<&Component::Create<Type>, entt::as_ref_t>(CREATE_FUNC)
 			.func<&Component::Get<Type>, entt::as_ref_t>(GET_FUNC);
+
+		entt::type_info info = entt::resolve<Type>().info();
+		std::string name = info.name().data();
+		s_MetaComponentsStorage[name] = static_cast<uint32_t>(info.hash());
 	}
 
 	template<typename Type>

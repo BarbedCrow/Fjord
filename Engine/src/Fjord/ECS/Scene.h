@@ -18,7 +18,7 @@ namespace Fjord
 			return *this;
 		}
 
-		entt::entity CreateEmptyEntity();
+		entt::entity& CreateEmptyEntity();
 
 		// TO DO: consider making this method private and adding SceneLoader as a friend class
 		entt::registry* const GetRegistry() { return &m_Registry; } 

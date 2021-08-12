@@ -25,7 +25,7 @@ namespace Fjord
 
 	void TransformComponent::SetupProxy()
 	{
-		m_Proxy.Name = "Transform";
+		m_Proxy.Name = entt::resolve<TransformComponent>().info().name();
 		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Translation", &Translation));
 		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Rotation", &Rotation, -360.f, 360.f, 0.5));
 		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Scale", &Scale, 0.f));

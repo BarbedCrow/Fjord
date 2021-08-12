@@ -3,20 +3,30 @@ Entities:
   - Entity: 1231232
     Components:
       - Component: 13514207
-        Color: [0.760617733, 0.287801325, 0.287801325, 1]
+        Color: [0.286943078, 0.764478743, 0.233180791, 1]
       - Component: 2832165387
-        Translation: [0, 0, 0]
-        Rotation: [0, 0, 1.29999995]
-        Scale: [2.0999999, 2, 1]
+        Translation: [0.600000024, -2.5, 0]
+        Rotation: [0, 0, 62.5]
+        Scale: [3.0999999, 2.79999995, 1]
       - Component: 538785409
-        id: redd
+        id: entity
   - Entity: 1231232
     Components:
       - Component: 13514207
-        Color: [0.211624771, 0.327062279, 0.602316618, 1]
+        Color: [0.68725872, 0.252083302, 0.252083302, 1]
       - Component: 2832165387
-        Translation: [3.20000005, 0, 0]
-        Rotation: [0, 0, 63]
-        Scale: [4.80000019, 1, 1]
+        Translation: [0, 0, 0]
+        Rotation: [0, 0, 26]
+        Scale: [1, 1, 1]
       - Component: 538785409
-        id: color
+        id: entity2
+  - Entity: 1231232
+    Components:
+      - Component: 13514207
+        Color: [0.225732476, 0.223073602, 0.67181468, 1]
+      - Component: 2832165387
+        Translation: [2.0999999, 0, 0]
+        Rotation: [0, 0, 25.5]
+        Scale: [2.5, 3.20000005, 1]
+      - Component: 538785409
+        id: entity3

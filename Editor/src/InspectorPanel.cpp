@@ -24,9 +24,7 @@ namespace Fjord
 			ImGui::Text(id.UID.c_str());
 			ImGui::Separator();
 			
-			/*const ImGuiTreeNodeFlags treeNodeFlags = ImGuiTreeNodeFlags_DefaultOpen | ImGuiTreeNodeFlags_Framed 
-				| ImGuiTreeNodeFlags_SpanAvailWidth | ImGuiTreeNodeFlags_AllowItemOverlap | ImGuiTreeNodeFlags_FramePadding;*/
-
+			//Display Components
 			registry->visit(entt, [&](const auto info)
 				{
 					const auto type = entt::resolve(info);
@@ -34,6 +32,26 @@ namespace Fjord
 					auto comp = any.try_cast<Component>();
 					DisplayComponent(comp);
 				});
+
+			//Handle Context Menus
+			if (ImGui::IsMouseClicked(ImGuiMouseButton_Right) && ImGui::IsWindowHovered())
+			{
+				ImGui::OpenPopup("Context");
+			}
+
+			if (ImGui::BeginPopup("Context"))
+			{
+				for (const auto& it : Component::GetMetaComponentsStorage())
+				{
+					if (ImGui::MenuItem(it.first.c_str()))
+					{
+						//TO DO: check if the entity already has this component
+						auto compType = entt::resolve(it.second);
+						auto compMeta = compType.func(Component::CREATE_FUNC).invoke({}, entt::forward_as_meta(*registry), entt);
+					}
+				}
+				ImGui::EndPopup();
+			}
 		}
 
 		ImGui::End();

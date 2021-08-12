@@ -50,6 +50,7 @@ namespace Fjord
 		{
 			if (ImGui::MenuItem("Add Entity"))
 			{
+				//TO DO: check if there is no entity with the same name
 				m_Scene->CreateEmptyEntity();
 			}
 			ImGui::EndPopup();
