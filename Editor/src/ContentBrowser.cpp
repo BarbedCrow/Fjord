@@ -150,10 +150,10 @@ namespace Fjord
 				{
 					switch (nodeToDisplay.Type)
 					{
-					case DIRECTORY:
+					case ContentBrowserNodeType::DIRECTORY:
 						m_LastSelectedDir = &nodeToDisplay;
 						break;
-					case FILE:
+					case ContentBrowserNodeType::FILE:
 						break;
 					default:
 						break;

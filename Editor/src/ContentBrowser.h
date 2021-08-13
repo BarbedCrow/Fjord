@@ -4,7 +4,7 @@
 
 namespace Fjord
 {
-	enum ContentBrowserNodeType
+	enum class ContentBrowserNodeType
 	{
 		DIRECTORY,
 		FILE
