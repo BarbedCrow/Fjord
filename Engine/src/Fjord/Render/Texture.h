@@ -7,7 +7,7 @@ namespace Fjord
 	class Texture2D
 	{
 	public:
-		Texture2D(const std::string& path);
+		Texture2D(const std::string& path, bool flipVert = 1);
 		Texture2D(uint32_t width, uint32_t height);
 		~Texture2D();
 

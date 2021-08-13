@@ -41,6 +41,7 @@ namespace Fjord
 			}
 		}
 
+		//Context Menus
 		if (ImGui::IsMouseClicked(ImGuiMouseButton_Right) && ImGui::IsWindowHovered() && !m_ItemWasRightClicked)
 		{
 			ImGui::OpenPopup("Context");

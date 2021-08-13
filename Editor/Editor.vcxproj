@@ -131,11 +131,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\ContentBrowser.h" />
     <ClInclude Include="src\EditorApp.h" />
     <ClInclude Include="src\HierarchyPanel.h" />
     <ClInclude Include="src\InspectorPanel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ContentBrowser.cpp" />
     <ClCompile Include="src\EditorApp.cpp" />
     <ClCompile Include="src\HierarchyPanel.cpp" />
     <ClCompile Include="src\InspectorPanel.cpp" />

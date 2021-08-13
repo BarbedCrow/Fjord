@@ -7,7 +7,7 @@ namespace Fjord
 	class InspectorPanel
 	{
 	public:
-		InspectorPanel();
+		InspectorPanel() = default;
 		~InspectorPanel() = default;
 
 		void SetScene(Ref<Scene>& scene) { m_Scene = scene; }

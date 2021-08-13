@@ -18,6 +18,7 @@ namespace Fjord
 
 		m_HierarchyPanel.SetScene(m_Scene);
 		m_InspectorPanel.SetScene(m_Scene);
+		m_ContentBrowser.SetScene(m_Scene);
 
 		FramebufferSpecification fbSpec;
 		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth };
@@ -127,7 +128,7 @@ namespace Fjord
 
 		if (!opt_padding)
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
-		ImGui::Begin("DockSpace Demo", &dockOpen, window_flags);
+		ImGui::Begin("DockSpace", &dockOpen, window_flags);
 		if (!opt_padding)
 			ImGui::PopStyleVar();
 
@@ -163,11 +164,8 @@ namespace Fjord
 		//LAYOUT
 		m_HierarchyPanel.Update();
 		m_InspectorPanel.Update(m_HierarchyPanel.GetSelectedEntity());
+		m_ContentBrowser.Update();
 		
-		//DEMO TEST
-		/*bool showDemo = true;
-		ImGui::ShowDemoWindow(&showDemo);*/
-
 		//VIEWPORT/////////////////////////////////////////////
 		//TODO: move to separated unit 
 		ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0, 0));
@@ -188,6 +186,10 @@ namespace Fjord
 		ImGui::End();
 		ImGui::PopStyleVar();
 		/////////////////////////////////////////////////////
+
+		//DEMO TEST
+		/*bool showDemo = true;
+		ImGui::ShowDemoWindow(&showDemo);*/
 
 		ImGui::End();
 	}

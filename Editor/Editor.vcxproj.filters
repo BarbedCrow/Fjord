@@ -30,6 +30,7 @@
     <ClInclude Include="src\InspectorPanel.h">
       <Filter>src</Filter>
     </ClInclude>
+    <ClInclude Include="src\ContentBrowser.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\EditorApp.cpp">
@@ -41,6 +42,7 @@
     <ClCompile Include="src\InspectorPanel.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="src\ContentBrowser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf">

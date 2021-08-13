@@ -9,10 +9,6 @@
 
 namespace Fjord
 {
-	InspectorPanel::InspectorPanel()
-	{
-
-	}
 
 	void InspectorPanel::Update(const entt::entity& entt)
 	{

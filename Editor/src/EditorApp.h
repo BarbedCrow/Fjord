@@ -4,6 +4,7 @@
 
 #include "HierarchyPanel.h"
 #include "InspectorPanel.h"
+#include "ContentBrowser.h"
 
 namespace Fjord
 {
@@ -24,6 +25,7 @@ namespace Fjord
 
 		HierarchyPanel m_HierarchyPanel;
 		InspectorPanel m_InspectorPanel;
+		ContentBrowser m_ContentBrowser;
 
 		//TEMP
 		Ref<RenderSystem> m_RenderSystem;
