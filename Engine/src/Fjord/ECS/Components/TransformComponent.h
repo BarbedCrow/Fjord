@@ -16,7 +16,7 @@ namespace Fjord
 	public:
 		TransformComponent();
 		TransformComponent(const TransformComponent&) = default;
-		TransformComponent(const glm::vec3& translation) : Translation(translation) {}
+		TransformComponent(const glm::vec3& translation) : TransformComponent() { Translation = translation; }
 
 		glm::mat4 GetTransform() const;
 

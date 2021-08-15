@@ -146,7 +146,7 @@
     <ClInclude Include="src\Fjord\ECS\Components\Component.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
-    <ClInclude Include="src\Fjord\ECS\Components\RenderComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\TransformComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Entity.h" />
     <ClInclude Include="src\Fjord\ECS\Scene.h" />
@@ -597,7 +597,7 @@
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\CameraComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
-    <ClCompile Include="src\Fjord\ECS\Components\RenderComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Entity.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />

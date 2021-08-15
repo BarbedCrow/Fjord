@@ -61,7 +61,7 @@ namespace Fjord
 		glBindVertexArray(0);
 	}
 
-	void VertexArray::AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
+	void VertexArray::SetVertexBuffer(const Ref<VertexBuffer>& vertexBuffer)
 	{
 		FJORD_CORE_ASSERT(vertexBuffer->GetLayout().GetElements().size(), "Layout of vertex buffer is empty");
 
@@ -78,7 +78,7 @@ namespace Fjord
 			idx++;
 		}
 
-		m_VertexBuffers.push_back(vertexBuffer);
+		m_VertexBuffer = vertexBuffer;
 	}
 
 	void VertexArray::SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer)

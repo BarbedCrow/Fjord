@@ -155,7 +155,7 @@
     <None Include="assets\fonts\Roboto\Roboto-Regular.ttf" />
     <None Include="assets\fonts\Roboto\Roboto-Thin.ttf" />
     <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf" />
-    <None Include="assets\shaders\FlatColorShader.glsl" />
+    <None Include="assets\shaders\BasicShader.glsl" />
     <None Include="assets\shaders\TextureShader.glsl" />
   </ItemGroup>
   <ItemGroup>

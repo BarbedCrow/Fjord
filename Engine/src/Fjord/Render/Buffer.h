@@ -8,7 +8,6 @@
 
 namespace Fjord
 {
-
 	enum class ShaderDataType
 	{
 		None = 0,
@@ -136,10 +135,11 @@ namespace Fjord
 		VertexBuffer(float* vertices, uint32_t size);
 		~VertexBuffer();
 
-		virtual void Bind() const;
-		virtual void Unbind() const;
-		virtual void SetLayout(const BufferLayout& layout) { m_Layout = layout; }
-		virtual const BufferLayout& GetLayout() const { return m_Layout; }
+		void Bind() const;
+		void Unbind() const;
+		void SetData(const void* data, uint32_t size);
+		void SetLayout(const BufferLayout& layout) { m_Layout = layout; }
+		const BufferLayout& GetLayout() const { return m_Layout; }
 	private:
 		uint32_t m_RendererID;
 		BufferLayout m_Layout;

@@ -118,6 +118,16 @@ namespace Fjord
 				auto val = data[member->Name];
 				if (val) *castMember->Value = val.as<std::string>();
 			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberTexture>(member))
+			{
+				auto val = data[member->Name];
+				if (val) *castMember->Value = val.as<std::string>();
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberFloat>(member))
+			{
+				auto val = data[member->Name];
+				if (val) *castMember->Value = val.as<float>();
+			}
 		}
 	}
 
@@ -138,6 +148,14 @@ namespace Fjord
 				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
 			}
 			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberString>(member))
+			{
+				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberTexture>(member))
+			{
+				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberFloat>(member))
 			{
 				out << YAML::Key << castMember->Name << YAML::Value << *castMember->Value;
 			}

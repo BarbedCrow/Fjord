@@ -1401,14 +1401,14 @@
     <ClInclude Include="src\Fjord\ECS\Components\Component.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
-    <ClInclude Include="src\Fjord\ECS\Components\RenderComponent.h">
-      <Filter>src\Fjord\ECS\Components</Filter>
-    </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Components\CameraComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Entity.h" />
     <ClInclude Include="src\Fjord\ECS\Components\UIDComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\ComponentProxy.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Fjord\ECS\Scene.cpp">
@@ -1471,9 +1471,6 @@
     <ClCompile Include="vendor\stb\stb\stb_image.cpp">
       <Filter>vendor\stb\stb</Filter>
     </ClCompile>
-    <ClCompile Include="src\Fjord\ECS\Components\RenderComponent.cpp">
-      <Filter>src\Fjord\ECS\Components</Filter>
-    </ClCompile>
     <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClCompile>
@@ -1485,5 +1482,8 @@
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

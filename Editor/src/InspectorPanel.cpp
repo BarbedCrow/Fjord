@@ -81,6 +81,14 @@ namespace Fjord
 					*castMember->Value = std::string(buffer);
 				}
 			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberTexture>(member))
+			{
+				// TO DO: Support
+			}
+			else if (auto castMember = std::dynamic_pointer_cast<ComponentMemberFloat>(member))
+			{
+				ImGui::DragFloat(castMember->Name.c_str(), castMember->Value);
+			}
 		}
 	}
 }

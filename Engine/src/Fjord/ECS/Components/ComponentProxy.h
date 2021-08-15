@@ -40,6 +40,16 @@ namespace Fjord
 		{}
 	};
 
+	struct ComponentMemberFloat : ComponentMember
+	{
+		float* Value;
+
+		ComponentMemberFloat(std::string name, float* value, bool isEditable = true)
+			:
+			ComponentMember(name, isEditable),
+			Value(value)
+		{}
+	};
 
 	struct ComponentMemberColorRGBA : ComponentMember
 	{
@@ -57,6 +67,17 @@ namespace Fjord
 		std::string* Value;
 
 		ComponentMemberString(std::string name, std::string* value, bool isEditable = true)
+			:
+			ComponentMember(name, isEditable),
+			Value(value)
+		{}
+	};
+
+	struct ComponentMemberTexture : ComponentMember
+	{
+		std::string* Value;
+
+		ComponentMemberTexture(std::string name, std::string* value, bool isEditable = true)
 			:
 			ComponentMember(name, isEditable),
 			Value(value)

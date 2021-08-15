@@ -9,17 +9,17 @@
 
 namespace Fjord
 {
-	class RenderComponent : public Component
+	class SpriteRendererComponent : public Component
 	{
 	public:
-		RenderComponent();
-		RenderComponent(const RenderComponent&) = default;
+		SpriteRendererComponent();
+		SpriteRendererComponent(const SpriteRendererComponent&) = default;
 	public:
 
-		Ref<VertexArray> VerticesArray;
 		Ref<Shader> Material; // replace with material
-		Ref<Texture2D> Texture;
+		std::string Texture = "assets\\textures\\quad.png";
 		glm::vec4 Color = {1.0f, 1.0f, 1.0f, 1.0f};
+		float TilingFactor = 1.f;
 	protected:
 		virtual void SetupProxy() override;
 	};

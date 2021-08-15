@@ -10,16 +10,16 @@ namespace Fjord
 		VertexArray();
 		~VertexArray();
 
-		virtual void Bind() const;
-		virtual void Unbind() const;
-		virtual void AddVertexBuffer(const Ref<VertexBuffer>& vertexBuffer) ;
-		virtual void SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer) ;
+		void Bind() const;
+		void Unbind() const;
+		void SetVertexBuffer(const Ref<VertexBuffer>& vertexBuffer) ;
+		void SetIndexBuffer(const Ref<IndexBuffer>& indexBuffer) ;
 
-		virtual const std::vector<Ref<VertexBuffer>>& GetVertexBuffers() const { return m_VertexBuffers; }
-		virtual const Ref<IndexBuffer>& GetIndexBuffer() const { return m_IndexBuffer; }
+		const Ref<VertexBuffer>& GetVertexBuffer() const { return m_VertexBuffer; }
+		const Ref<IndexBuffer>& GetIndexBuffer() const { return m_IndexBuffer; }
 	private:
 		uint32_t m_RendererID;
-		std::vector<Ref<VertexBuffer>> m_VertexBuffers;
+		Ref<VertexBuffer> m_VertexBuffer;
 		Ref<IndexBuffer> m_IndexBuffer;
 	};
 }

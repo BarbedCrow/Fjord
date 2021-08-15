@@ -35,7 +35,7 @@ namespace Fjord
 		//REGISTER components. Move to separated function
 		UIDComponent::Register<UIDComponent>();
 		TransformComponent::Register<TransformComponent>();
-		RenderComponent::Register<RenderComponent>();
+		SpriteRendererComponent::Register<SpriteRendererComponent>();
 		CameraComponent::Register<CameraComponent>();
 		EditorComponent::Register<EditorComponent>();
 
@@ -129,13 +129,14 @@ namespace Fjord
 		if (!opt_padding)
 			ImGui::PushStyleVar(ImGuiStyleVar_WindowPadding, ImVec2(0.0f, 0.0f));
 		ImGui::Begin("DockSpace", &dockOpen, window_flags);
+		
 		if (!opt_padding)
 			ImGui::PopStyleVar();
 
 		if (opt_fullscreen)
 			ImGui::PopStyleVar(2);
 
-		// Submit the DockSpace
+		 //Submit the DockSpace
 		ImGuiIO& io = ImGui::GetIO();
 		if (io.ConfigFlags & ImGuiConfigFlags_DockingEnable)
 		{
@@ -161,6 +162,8 @@ namespace Fjord
 			ImGui::EndMenuBar();
 		}
 
+		//ImGui::Begin("Test");
+
 		//LAYOUT
 		m_HierarchyPanel.Update();
 		m_InspectorPanel.Update(m_HierarchyPanel.GetSelectedEntity());
@@ -181,7 +184,7 @@ namespace Fjord
 
 		//Framebuffer to texture
 		uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
-		ImGui::Image((void*)textureID, ImVec2{ viewportSize.x, viewportSize.y });
+		ImGui::Image((void*)textureID, ImVec2{ viewportSize.x, viewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 
 		ImGui::End();
 		ImGui::PopStyleVar();

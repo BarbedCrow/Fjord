@@ -1,5 +1,7 @@
 #pragma once
 
+#include <GLFW/glfw3.h>
+
 namespace Fjord
 {
 	class Time
@@ -7,8 +9,9 @@ namespace Fjord
 		friend class Application;
 	public:
 
-		static float GetTime() { return s_Time; }
-		static float GetDeltaTime() { return s_DeltaTime; }
+		static float GetTime() { return glfwGetTime(); }
+		
+		static float GetDeltaTime() { return glfwGetTime() - s_Time; }
 
 	private:
 		static float s_Time;

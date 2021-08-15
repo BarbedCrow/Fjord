@@ -75,8 +75,30 @@ namespace Fjord
 		glTextureSubImage2D(m_RendererID, 0, 0, 0, m_Width, m_Height, m_DataFormat, GL_UNSIGNED_BYTE, data);
 	}
 
-	void Texture2D::Bind(uint32_t slot) const
+	void Texture2D::Bind(uint32_t slot)
 	{
+		m_Slot = slot;
 		glBindTextureUnit(slot, m_RendererID);
 	}
+
+	void Texture2D::Unbind()
+	{
+		glBindTextureUnit(m_Slot, 0);
+	}
+
+	//TEXTURE LIBRARY////////////////////////////////////////////////////////////
+	Ref<Texture2D>& TextureLibrary::Get(const std::string& name)
+	{
+		if (!Exists(name)) Load(name);
+		return m_Textures.find(name)->second;
+	}
+
+	Ref<Texture2D>& TextureLibrary::Load(const std::string& name)
+	{
+		auto& texture = CreateRef<Texture2D>(name);
+		m_Textures[name] = texture;
+		return texture;
+	}
+	////////////////////////////////////////////////////////////////////////////
+
 }
