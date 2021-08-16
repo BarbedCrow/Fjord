@@ -25,7 +25,7 @@ namespace Fjord
 	{
 		const uint32_t QUAD_VERTEX_COUNT = 4;
 		const uint32_t QUAD_INDEX_COUNT = 6;
-		const uint32_t MAX_QUADS_COUNT_FOR_CALL = 1; //max amout of quads that could be drawn per one draw call
+		const uint32_t MAX_QUADS_COUNT_FOR_CALL = 1000; //max amout of quads that could be drawn per one draw call
 		const uint32_t MAX_VERTEX_COUNT = QUAD_VERTEX_COUNT * MAX_QUADS_COUNT_FOR_CALL;
 		const uint32_t MAX_INDEX_COUNT = QUAD_INDEX_COUNT * MAX_QUADS_COUNT_FOR_CALL;
 

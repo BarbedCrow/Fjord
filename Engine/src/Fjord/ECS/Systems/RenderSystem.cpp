@@ -102,11 +102,16 @@ namespace Fjord
 
 
 	//RENDER SYSTEM//////////////////////////////////////
+
+	static bool Compare(const std::pair<TransformComponent&, SpriteRendererComponent&>& first, const std::pair<TransformComponent&, SpriteRendererComponent&>& second)
+	{
+		return first.first.Translation.z < second.first.Translation.z;
+	}
+
 	RenderSystem::RenderSystem(Ref<Scene>& scene) : GameSystem(scene)
 	{
 		glEnable(GL_BLEND);
 		glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-		glEnable(GL_DEPTH_TEST);
 
 		m_SpritesBuffer.Init();
 	}
@@ -146,11 +151,19 @@ namespace Fjord
 		auto camView = registry->view<CameraComponent>();
 		CameraComponent& camera = camView.get<CameraComponent>(camView[0]);
 
-		m_SpritesBuffer.Clear();
-
+		//Sort sprites in Z-order
+		std::list<std::pair<TransformComponent&, SpriteRendererComponent&>> sprites;
 		for (auto&& [entity, tr, render] : registry->view<TransformComponent, SpriteRendererComponent>().each())
 		{
-			SubmitSpriteForRender(tr, render, camera);
+			sprites.push_back(std::pair<TransformComponent&, SpriteRendererComponent&>(tr, render));
+		}
+		sprites.sort(Compare);
+
+		//Submit sprites
+		m_SpritesBuffer.Clear();
+		for (auto& it : sprites)
+		{
+			SubmitSpriteForRender(it.first, it.second, camera);
 			if (m_SpritesBuffer.m_SpritesCount >= m_SpritesBuffer.MAX_QUADS_COUNT_FOR_CALL || m_SpritesBuffer.m_BindedTexturesCount >= m_SpritesBuffer.m_MaxTextureCount) FlushSprites();
 		}
 
