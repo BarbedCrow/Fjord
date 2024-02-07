@@ -4,6 +4,12 @@
     <Filter Include="assets">
       <UniqueIdentifier>{583885F2-44DA-AFC8-2D95-C31C19D63619}</UniqueIdentifier>
     </Filter>
+    <Filter Include="assets\fonts">
+      <UniqueIdentifier>{B114ABAA-9D77-3A4F-46FD-7205323F06D2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="assets\fonts\Roboto">
+      <UniqueIdentifier>{3533B903-A194-9611-2A02-DDC39662CDD0}</UniqueIdentifier>
+    </Filter>
     <Filter Include="assets\shaders">
       <UniqueIdentifier>{51CD2FD9-3D9B-23DF-262F-9405129CFF43}</UniqueIdentifier>
     </Filter>
@@ -15,11 +21,52 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\SandboxApplication.h">
+      <Filter>src</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
     <ClCompile Include="src\SandboxApplication.cpp">
       <Filter>src</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
+    <None Include="assets\fonts\Roboto\Roboto-Black.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-BlackItalic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Bold.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-BoldItalic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Italic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Light.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-LightItalic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Medium.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-MediumItalic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Regular.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-Thin.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
+    <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf">
+      <Filter>assets\fonts\Roboto</Filter>
+    </None>
     <None Include="assets\shaders\FlatColorShader.glsl">
       <Filter>assets\shaders</Filter>
     </None>

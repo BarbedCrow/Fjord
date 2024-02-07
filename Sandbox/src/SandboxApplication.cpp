@@ -1,24 +1,21 @@
-#include <Fjord.h>
+#include "SandboxApplication.h"
+
 #include <Fjord/core/EntryPoint.h>
 
-class Sandbox : public Fjord::Application
+Sandbox::Sandbox()
 {
-public:
-	Sandbox()
-	{
-		
-	}
+	
+}
 
-	~Sandbox()
-	{
+Sandbox::~Sandbox()
+{
 
-	}
+}
 
-	void UpdateInternal() override
-	{
+void Sandbox::UpdateInternal()
+{
 
-	}
-};
+}
 
 Fjord::Application* Fjord::CreateApplication()
 {

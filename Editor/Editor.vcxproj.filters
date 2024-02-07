@@ -21,6 +21,9 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="src\ContentBrowser.h">
+      <Filter>src</Filter>
+    </ClInclude>
     <ClInclude Include="src\EditorApp.h">
       <Filter>src</Filter>
     </ClInclude>
@@ -30,9 +33,11 @@
     <ClInclude Include="src\InspectorPanel.h">
       <Filter>src</Filter>
     </ClInclude>
-    <ClInclude Include="src\ContentBrowser.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="src\ContentBrowser.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="src\EditorApp.cpp">
       <Filter>src</Filter>
     </ClCompile>
@@ -42,7 +47,6 @@
     <ClCompile Include="src\InspectorPanel.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="src\ContentBrowser.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="assets\fonts\Roboto\Roboto-Black.ttf">
@@ -81,14 +85,122 @@
     <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf">
       <Filter>assets\fonts\Roboto</Filter>
     </None>
-    <None Include="assets\shaders\TextureShader.glsl">
+    <None Include="assets\shaders\BasicShader.glsl">
       <Filter>assets\shaders</Filter>
     </None>
-    <None Include="assets\shaders\BasicShader.glsl">
+    <None Include="assets\shaders\TextureShader.glsl">
       <Filter>assets\shaders</Filter>
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Image Include="assets\textures\quad.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_1.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_10.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_11.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_12.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_13.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_14.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_15.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_16.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_17.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_18.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_19.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_2.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_20.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_21.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_22.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_23.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_24.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_25.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_26.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_27.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_28.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_29.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_3.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_30.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_31.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_32.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_33.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_34.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_35.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_4.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_5.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_6.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_7.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_8.png">
+      <Filter>assets\textures</Filter>
+    </Image>
+    <Image Include="assets\textures\test_9.png">
+      <Filter>assets\textures</Filter>
+    </Image>
     <Image Include="assets\textures\test_texture.png">
       <Filter>assets\textures</Filter>
     </Image>

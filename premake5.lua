@@ -116,6 +116,7 @@ project "Sandbox"
 		"%{prj.name}/src/**.cpp",
 		"%{prj.name}/assets/**.glsl",
 		"%{prj.name}/assets/**.png",
+		"%{prj.name}/assets/**.ttf",
 	}
 
 	includedirs
@@ -124,6 +125,8 @@ project "Sandbox"
 		"%{IncludeDir.spdlog}",
 		"%{IncludeDir.glm}",
 		"%{IncludeDir.entt}",
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.yaml}",
 	}
 
 	links
