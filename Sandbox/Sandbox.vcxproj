@@ -79,7 +79,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FJORD_ENABLE_ASSERTS;FJORD_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Engine\src;src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glfw\include;..\Engine\vendor\glad\include;..\Engine\vendor\imgui;..\Engine\vendor\glm;..\Engine\vendor\stb;..\Engine\vendor\entt\include;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -96,7 +96,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FJORD_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Engine\src;src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glfw\include;..\Engine\vendor\glad\include;..\Engine\vendor\imgui;..\Engine\vendor\glm;..\Engine\vendor\stb;..\Engine\vendor\entt\include;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -117,7 +117,7 @@
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <PreprocessorDefinitions>FJORD_RETAIL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>..\Engine\src;src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glfw\include;..\Engine\vendor\glad\include;..\Engine\vendor\imgui;..\Engine\vendor\glm;..\Engine\vendor\stb;..\Engine\vendor\entt\include;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -152,6 +152,7 @@
     <None Include="assets\fonts\Roboto\Roboto-Regular.ttf" />
     <None Include="assets\fonts\Roboto\Roboto-Thin.ttf" />
     <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf" />
+    <None Include="assets\shaders\BasicShader.glsl" />
     <None Include="assets\shaders\FlatColorShader.glsl" />
     <None Include="assets\shaders\TextureShader.glsl" />
   </ItemGroup>

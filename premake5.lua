@@ -114,6 +114,65 @@ project "Sandbox"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.hpp",
+		"%{prj.name}/assets/**.glsl",
+		"%{prj.name}/assets/**.png",
+		"%{prj.name}/assets/**.ttf",
+	}
+
+	includedirs
+	{
+		"Engine/src",
+		"%{prj.name}/src",
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.GLFW}",
+		"%{IncludeDir.glad}",
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.stb}",
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.yaml}",
+	}
+
+	links
+	{
+		"Engine"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines 
+		{
+			"FJORD_ENABLE_ASSERTS",
+			"FJORD_DEBUG"
+		}
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "FJORD_RELEASE"
+		optimize "on"
+
+	filter "configurations:Retail"
+		defines "FJORD_RETAIL"
+		optimize "on"
+
+project "Editor"
+	location "Editor"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}") 
+	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.hpp",
 		"%{prj.name}/assets/**.glsl",
 		"%{prj.name}/assets/**.png",
 		"%{prj.name}/assets/**.ttf",
@@ -167,6 +226,61 @@ project "Editor"
 	{
 		"%{prj.name}/src/**.h",
 		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.hpp",
+		"%{prj.name}/assets/**.glsl",
+		"%{prj.name}/assets/**.png",
+		"%{prj.name}/assets/**.ttf",
+	}
+
+	includedirs
+	{
+		"Engine/src",
+		"%{IncludeDir.spdlog}",
+		"%{IncludeDir.glm}",
+		"%{IncludeDir.entt}",
+		"%{IncludeDir.imgui}",
+		"%{IncludeDir.yaml}",
+	}
+
+	links
+	{
+		"Engine"
+	}
+
+	filter "system:windows"
+		systemversion "latest"
+
+	filter "configurations:Debug"
+		defines 
+		{
+			"FJORD_ENABLE_ASSERTS",
+			"FJORD_DEBUG"
+		}
+		symbols "on"
+
+	filter "configurations:Release"
+		defines "FJORD_RELEASE"
+		optimize "on"
+
+	filter "configurations:Retail"
+		defines "FJORD_RETAIL"
+		optimize "on"
+
+project "Zoom"
+	location "Zoom"
+	kind "ConsoleApp"
+	language "C++"
+	cppdialect "C++17"
+	staticruntime "on"
+
+	targetdir ("bin/" .. outputdir .. "/%{prj.name}") 
+	objdir ("bin_int/" .. outputdir .. "/%{prj.name}")
+
+	files
+	{
+		"%{prj.name}/src/**.h",
+		"%{prj.name}/src/**.cpp",
+		"%{prj.name}/src/**.hpp",
 		"%{prj.name}/assets/**.glsl",
 		"%{prj.name}/assets/**.png",
 		"%{prj.name}/assets/**.ttf",

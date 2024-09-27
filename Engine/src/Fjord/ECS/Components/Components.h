@@ -5,3 +5,4 @@
 #include "CameraComponent.h"
 #include "EditorComponent.h"
 #include "UIDComponent.h"
+#include "PerspectiveCameraComponent.h"

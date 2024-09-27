@@ -5,13 +5,12 @@ namespace Fjord
 {
 	UIDComponent::UIDComponent()
 	{
-		SetupProxy();
 	}
 
 	void UIDComponent::SetupProxy()
 	{
-		m_Proxy.Name = entt::resolve<UIDComponent>().info().name();
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberString>("id", &UID));
+		m_proxy.Name = entt::resolve<UIDComponent>().info().name();
+		m_proxy.Members.push_back(CreateRef<ComponentMemberString>("id", &UID));
 	}
 
 }

@@ -1,0 +1,208 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Retail|x64">
+      <Configuration>Retail</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8A50907C-7687-910D-1F74-77100B8A0D0F}</ProjectGuid>
+    <IgnoreWarnCompileDuplicatedFilename>true</IgnoreWarnCompileDuplicatedFilename>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>Zoom</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>v143</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+    <OutDir>..\bin\Debug_windows_x86_64\Zoom\</OutDir>
+    <IntDir>..\bin_int\Debug_windows_x86_64\Zoom\</IntDir>
+    <TargetName>Zoom</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Release_windows_x86_64\Zoom\</OutDir>
+    <IntDir>..\bin_int\Release_windows_x86_64\Zoom\</IntDir>
+    <TargetName>Zoom</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <LinkIncremental>false</LinkIncremental>
+    <OutDir>..\bin\Retail_windows_x86_64\Zoom\</OutDir>
+    <IntDir>..\bin_int\Retail_windows_x86_64\Zoom\</IntDir>
+    <TargetName>Zoom</TargetName>
+    <TargetExt>.exe</TargetExt>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>FJORD_ENABLE_ASSERTS;FJORD_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <Optimization>Disabled</Optimization>
+      <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>FJORD_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Retail|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <PreprocessorDefinitions>FJORD_RETAIL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\Engine\src;..\Engine\vendor\spdlog\include;..\Engine\vendor\glm;..\Engine\vendor\entt\include;..\Engine\vendor\imgui;..\Engine\vendor\yaml\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <Optimization>Full</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <MinimalRebuild>false</MinimalRebuild>
+      <StringPooling>true</StringPooling>
+      <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
+      <LanguageStandard>stdcpp17</LanguageStandard>
+      <ExternalWarningLevel>Level3</ExternalWarningLevel>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Game.h" />
+    <ClInclude Include="src\ZoomApp.h" />
+    <ClInclude Include="src\meta.generated.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Game.cpp" />
+    <ClCompile Include="src\ZoomApp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="assets\fonts\Roboto\Roboto-Black.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-BlackItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Bold.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-BoldItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Italic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Light.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-LightItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Medium.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-MediumItalic.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Regular.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-Thin.ttf" />
+    <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf" />
+    <None Include="assets\shaders\BasicShader.glsl" />
+    <None Include="assets\shaders\TextureShader.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="assets\textures\quad.png" />
+    <Image Include="assets\textures\test_1.png" />
+    <Image Include="assets\textures\test_10.png" />
+    <Image Include="assets\textures\test_11.png" />
+    <Image Include="assets\textures\test_12.png" />
+    <Image Include="assets\textures\test_13.png" />
+    <Image Include="assets\textures\test_14.png" />
+    <Image Include="assets\textures\test_15.png" />
+    <Image Include="assets\textures\test_16.png" />
+    <Image Include="assets\textures\test_17.png" />
+    <Image Include="assets\textures\test_18.png" />
+    <Image Include="assets\textures\test_19.png" />
+    <Image Include="assets\textures\test_2.png" />
+    <Image Include="assets\textures\test_20.png" />
+    <Image Include="assets\textures\test_21.png" />
+    <Image Include="assets\textures\test_22.png" />
+    <Image Include="assets\textures\test_23.png" />
+    <Image Include="assets\textures\test_24.png" />
+    <Image Include="assets\textures\test_25.png" />
+    <Image Include="assets\textures\test_26.png" />
+    <Image Include="assets\textures\test_27.png" />
+    <Image Include="assets\textures\test_28.png" />
+    <Image Include="assets\textures\test_29.png" />
+    <Image Include="assets\textures\test_3.png" />
+    <Image Include="assets\textures\test_30.png" />
+    <Image Include="assets\textures\test_31.png" />
+    <Image Include="assets\textures\test_32.png" />
+    <Image Include="assets\textures\test_33.png" />
+    <Image Include="assets\textures\test_34.png" />
+    <Image Include="assets\textures\test_35.png" />
+    <Image Include="assets\textures\test_4.png" />
+    <Image Include="assets\textures\test_5.png" />
+    <Image Include="assets\textures\test_6.png" />
+    <Image Include="assets\textures\test_7.png" />
+    <Image Include="assets\textures\test_8.png" />
+    <Image Include="assets\textures\test_9.png" />
+    <Image Include="assets\textures\test_texture.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Engine\Engine.vcxproj">
+      <Project>{DBC7D3B0-C769-FE86-B024-12DB9C6585D7}</Project>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

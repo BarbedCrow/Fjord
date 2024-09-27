@@ -44,8 +44,8 @@ namespace Fjord
 		Ref<Shader> Load(const std::string& filepath);
 		Ref<Shader> Load(const std::string& name, const std::string& filepath);
 
-		bool Exists(const std::string& name) { return m_Shaders.find(name) != m_Shaders.end(); }
+		bool Exists(const std::string& name) { return m_shaders.find(name) != m_shaders.end(); }
 	private:
-		std::unordered_map<std::string, Ref<Shader>> m_Shaders;
+		std::unordered_map<std::string, Ref<Shader>> m_shaders;
 	};
 }

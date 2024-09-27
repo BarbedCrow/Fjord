@@ -14,11 +14,14 @@ namespace Fjord
 	{
 	public:
 		Component() = default;
-		virtual ~Component() {}
+		Component(const Component& obj);
+		virtual ~Component() = default;
+
+		virtual void Init();
 
 		// this data is used to get user possibility to define what component data
 		//should be saved/loaded, shown in editor
-		ComponentProxy& GetProxy() { return m_Proxy; }
+		ComponentProxy& GetProxy() { return m_proxy; }
 		
 		//Always call this method for newly added components
 		//It allows entt system to register all meta data for your component so that 
@@ -35,7 +38,7 @@ namespace Fjord
 		//USE this function to define what data you want to save/load, show in editor
 		virtual void SetupProxy() = 0;
 	protected:
-		ComponentProxy m_Proxy;
+		ComponentProxy m_proxy;
 		std::vector<ComponentMember> m_OuterData;
 	private:
 
@@ -69,7 +72,9 @@ namespace Fjord
 	template<typename Type>
 	Type& Component::Create(entt::registry& registry, entt::entity entity)
 	{
-		return registry.emplace<Type>(entity);
+		auto& comp = registry.emplace<Type>(entity);
+		comp.Init();
+		return comp;
 	}
 
 	template<typename Type>

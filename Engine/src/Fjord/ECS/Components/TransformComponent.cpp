@@ -8,27 +8,54 @@
 
 namespace Fjord
 {
-	TransformComponent::TransformComponent()
+	TransformComponent::TransformComponent(const glm::vec3& pos, const glm::vec3& rot, const glm::vec3& scale)
+	: m_pos(pos)
+	, m_rot(rot)
+	, m_scale(scale)
 	{
-		SetupProxy();
+		CalculateTransform();
 	}
 
-	glm::mat4 TransformComponent::GetTransform() const
+	TransformComponent::TransformComponent(const TransformComponent& obj)
 	{
-		glm::mat4 rotation = glm::toMat4((glm::quat(glm::radians(Rotation))));
-		return glm::mat4(
-			glm::translate(glm::mat4(1.0f), Translation) *
-			rotation *
-			glm::scale(glm::mat4(1.0f), Scale)
+		m_pos = obj.m_pos;
+		m_rot = obj.m_rot;
+		m_scale = obj.m_scale;
+		m_tr = obj.m_tr;
+	}
+
+	void TransformComponent::CalculateTransform()
+	{
+		m_tr = glm::mat4(
+			glm::translate(glm::mat4(1.0f), m_pos) *
+			glm::toMat4((glm::quat(glm::radians(m_rot)))) *
+			glm::scale(glm::mat4(1.0f), m_scale)
 		);
+	}
+
+	void TransformComponent::SetPos(const glm::vec3& pos)
+	{
+		m_pos = pos;
+		CalculateTransform();
+	}
+
+	void TransformComponent::SetRot(const glm::vec3& scale)
+	{
+		m_scale = scale;
+		CalculateTransform();
+	}
+
+	void TransformComponent::SetScale(const glm::vec3& rot)
+	{
+		m_rot = rot;
 	}
 
 	void TransformComponent::SetupProxy()
 	{
-		m_Proxy.Name = entt::resolve<TransformComponent>().info().name();
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Translation", &Translation));
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Rotation", &Rotation, -360.f, 360.f, 0.5));
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Scale", &Scale, 0.f));
+		m_proxy.Name = entt::resolve<TransformComponent>().info().name();
+		m_proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Translation", &m_pos));
+		m_proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Rotation", &m_rot, -360.f, 360.f, 0.5));
+		m_proxy.Members.push_back(CreateRef<ComponentMemberVec3>("Scale", &m_scale, 0.f));
 	}
 
 }

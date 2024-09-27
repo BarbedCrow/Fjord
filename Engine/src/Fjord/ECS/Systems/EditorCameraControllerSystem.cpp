@@ -23,7 +23,7 @@ namespace Fjord
 
 	void EditorCameraControllerSystem::Update()
 	{
-		auto registry = m_Scene->GetRegistry();
+		/*auto registry = m_scene->GetRegistry();
 		float dt = Time::GetDeltaTime();
 		for (auto&& [entt, tr, camera] : registry->view<TransformComponent, CameraComponent>().each())
 		{
@@ -43,11 +43,11 @@ namespace Fjord
 			{
 				camera.Camera->SetPosition(tr.Translation += glm::vec3(Time::GetDeltaTime() * camera.Speed, 0, 0));
 			}
-		}
+		}*/
 	}
 	bool EditorCameraControllerSystem::HandleOnMouseScrolled(float x, float y)
 	{
-		auto registry = m_Scene->GetRegistry();
+		auto registry = m_scene->GetRegistry();
 		for (auto&& [entt, tr, camera] : registry->view<TransformComponent, CameraComponent>().each())
 		{
 			camera.ZoomLevel -= y * camera.ZoomSpeed;

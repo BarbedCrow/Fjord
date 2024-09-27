@@ -12,15 +12,3 @@ Entities:
         Scale: [1, 1, 1]
       - Component: 538785409
         id: green
-  - Entity: 1231232
-    Components:
-      - Component: 1423196489
-        Color: [1, 0, 0, 1]
-        Texture: assets\textures\quad.png
-        Tiling Factor: 1
-      - Component: 2832165387
-        Translation: [0, 0, 0]
-        Rotation: [0, 0, 0]
-        Scale: [1, 1, 1]
-      - Component: 538785409
-        id: red

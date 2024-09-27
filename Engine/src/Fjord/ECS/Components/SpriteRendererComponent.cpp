@@ -10,17 +10,15 @@ namespace Fjord
 {
 	SpriteRendererComponent::SpriteRendererComponent()
 	{
-		SetupProxy();
-
 		Material = CreateRef <Shader>("assets/shaders/BasicShader.glsl");
 	}
 
 	void SpriteRendererComponent::SetupProxy()
 	{
-		m_Proxy.Name = entt::resolve<SpriteRendererComponent>().info().name();
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberColorRGBA>("Color", &Color));
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberTexture>("Texture", &Texture));
-		m_Proxy.Members.push_back(CreateRef<ComponentMemberFloat>("Tiling Factor", &TilingFactor));
+		m_proxy.Name = entt::resolve<SpriteRendererComponent>().info().name();
+		m_proxy.Members.push_back(CreateRef<ComponentMemberColorRGBA>("Color", &Color));
+		m_proxy.Members.push_back(CreateRef<ComponentMemberTexture>("Texture", &Texture));
+		m_proxy.Members.push_back(CreateRef<ComponentMemberFloat>("Tiling Factor", &TilingFactor));
 	}
 
 }

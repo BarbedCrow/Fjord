@@ -9,17 +9,17 @@
 
 namespace Fjord
 {
-	Application* Application::s_Instance = nullptr;
+	Application* Application::s_instance = nullptr;
 
 	Application::Application()
 	{
-		s_Instance = this;
+		s_instance = this;
 		Log::Init();
-		m_Window = Window::Create("FJORD", 1920, 1080);
+		m_window = Window::Create("FJORD", 1920, 1080);
 
-		ImGuiSystem::Init(m_Window->GetNativeWindow());
+		ImGuiSystem::Init(m_window->GetNativeWindow());
 
-		m_Window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::Close));
+		m_window->OnWindowClose->AddListener(BIND_EVENT_HANDLER_0(Application::Close));
 	}
 
 	Application::~Application()
@@ -29,24 +29,24 @@ namespace Fjord
 
 	void Application::Start()
 	{
-		m_Running = true;
-		for (auto sys : m_Systems)
+		for(auto flow : m_flows)
 		{
-			sys->Activate();
+			flow->Start();
 		}
+		m_running = true;
 	}
 
 	void Application::Update()
 	{
-		while (m_Running)
+		while (m_running)
 		{
 			Time::SetTime(glfwGetTime());
-			m_Window->Update();
+			m_window->Update();
 			ImGuiSystem::Begin();
 			UpdateInternal();
-			for (auto sys : m_Systems)
+			for(auto flow : m_flows)
 			{
-				if (sys->IsActive()) sys->Update();
+				flow->Update();
 			}
 			ImGuiSystem::End();
 		}
@@ -54,7 +54,11 @@ namespace Fjord
 
 	bool Application::Close()
 	{
-		m_Running = false;
+		for(auto flow : m_flows)
+		{
+			flow->Close();
+		}
+		m_running = false;
 		return true;
 	}
 }

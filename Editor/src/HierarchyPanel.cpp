@@ -12,13 +12,13 @@ namespace Fjord
 
 	void HierarchyPanel::Update()
 	{
-		FJORD_CORE_ASSERT(m_Scene);
+		FJORD_CORE_ASSERT(m_scene);
 		m_ItemWasRightClicked = false;
 
 		ImGuiTreeNodeFlags flags;
 		
 		ImGui::Begin("Hierarchy");
-		auto registry = m_Scene->GetRegistry();
+		auto registry = m_scene->GetRegistry();
 		auto view = registry->view<UIDComponent>(entt::exclude<EditorComponent>);
 		for (auto entt : view)
 		{
@@ -52,7 +52,7 @@ namespace Fjord
 			if (ImGui::MenuItem("Add Entity"))
 			{
 				//TO DO: check if there is no entity with the same name
-				m_Scene->CreateEmptyEntity();
+				m_scene->CreateEmptyEntity();
 			}
 			ImGui::EndPopup();
 		}

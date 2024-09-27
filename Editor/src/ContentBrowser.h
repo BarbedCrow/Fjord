@@ -32,7 +32,7 @@ namespace Fjord
 		ContentBrowser();
 		~ContentBrowser() = default;
 
-		void SetScene(Ref<Scene> & scene) { m_Scene = scene; }
+		void SetScene(Ref<Scene> & scene) { m_scene = scene; }
 
 		void Update();
 	private:
@@ -40,7 +40,7 @@ namespace Fjord
 		void DisplayTreeNode(ContentBrowserNode& node);
 		void DisplayTable();
 	private:
-		Ref<Scene> m_Scene;
+		Ref<Scene> m_scene;
 
 		std::vector<ContentBrowserNode> m_Nodes;
 		std::unordered_set<std::string> m_SelectedNodeIDs;

@@ -7,4 +7,16 @@ namespace Fjord
 
 	const uint32_t Component::CREATE_FUNC = "Create"_hs;
 	const uint32_t Component::GET_FUNC = "Get"_hs;
+
+	Component::Component(const Component& obj)
+	{
+		m_proxy = obj.m_proxy;
+	}
+
+
+	void Component::Init()
+	{
+		SetupProxy();
+	}
+
 }

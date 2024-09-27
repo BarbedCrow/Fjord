@@ -21,14 +21,14 @@ namespace Fjord
 		
 		void ProcessInputs();
 	private:
-		Ref<Scene> m_Scene;
+		Ref<Scene> m_scene;
 
 		HierarchyPanel m_HierarchyPanel;
 		InspectorPanel m_InspectorPanel;
 		ContentBrowser m_ContentBrowser;
 
 		//TEMP
-		Ref<RenderSystem> m_RenderSystem;
-		Ref<Framebuffer> m_Framebuffer;
+		Ref<RenderSystemLegacy> m_renderSys;
+		Ref<Framebuffer> m_frameBuffer;
 	};
 }

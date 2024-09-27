@@ -4,6 +4,7 @@
 
 namespace Fjord
 {
+	//ORTHOGRAFIC CAMERA LEGACY
 	class OrthographicCamera
 	{
 	public:
@@ -31,4 +32,5 @@ namespace Fjord
 		glm::vec3 m_Position;
 		float m_Rotation = 0.0f;
 	};
+	//ORTHOGRAFIC CAMERA LEGACY
 }

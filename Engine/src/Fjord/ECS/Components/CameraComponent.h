@@ -27,7 +27,7 @@ namespace Fjord
 
 		float AspectRatio;
 	protected:
-		virtual void SetupProxy() override {}
+		void SetupProxy() override {}
 	};
 }
 

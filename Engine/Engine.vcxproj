@@ -149,6 +149,7 @@
     <ClInclude Include="src\Fjord\ECS\Components\ComponentProxy.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\TransformComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\UIDComponent.h" />
@@ -157,7 +158,9 @@
     <ClInclude Include="src\Fjord\ECS\SceneLoader.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\PlayerMovementSystem.h" />
     <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h" />
+    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystemLegacy.h" />
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h" />
     <ClInclude Include="src\Fjord\Render\Buffer.h" />
     <ClInclude Include="src\Fjord\Render\Camera.h" />
@@ -171,6 +174,7 @@
     <ClInclude Include="src\Fjord\core\Core.h" />
     <ClInclude Include="src\Fjord\core\EntryPoint.h" />
     <ClInclude Include="src\Fjord\core\Event.h" />
+    <ClInclude Include="src\Fjord\core\Flow.h" />
     <ClInclude Include="src\Fjord\core\Input.h" />
     <ClInclude Include="src\Fjord\core\KeyCodes.h" />
     <ClInclude Include="src\Fjord\core\Log.h" />
@@ -600,6 +604,7 @@
     <ClCompile Include="src\Fjord\ECS\Components\CameraComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />
@@ -607,7 +612,9 @@
     <ClCompile Include="src\Fjord\ECS\Scene.cpp" />
     <ClCompile Include="src\Fjord\ECS\SceneLoader.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Systems\PlayerMovementSystem.cpp" />
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Systems\RenderSystemLegacy.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp" />
     <ClCompile Include="src\Fjord\ImGui\ImGuiSystem.cpp" />
     <ClCompile Include="src\Fjord\Render\Buffer.cpp" />
@@ -618,6 +625,7 @@
     <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
     <ClCompile Include="src\Fjord\Utils\YAMLUtils.cpp" />
     <ClCompile Include="src\Fjord\core\Application.cpp" />
+    <ClCompile Include="src\Fjord\core\Flow.cpp" />
     <ClCompile Include="src\Fjord\core\Input.cpp" />
     <ClCompile Include="src\Fjord\core\Log.cpp" />
     <ClCompile Include="src\Fjord\core\Time.cpp" />

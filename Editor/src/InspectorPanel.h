@@ -10,13 +10,13 @@ namespace Fjord
 		InspectorPanel() = default;
 		~InspectorPanel() = default;
 
-		void SetScene(Ref<Scene>& scene) { m_Scene = scene; }
+		void SetScene(Ref<Scene>& scene) { m_scene = scene; }
 
 		void Update(const entt::entity& entt);
 	private:
 		void DisplayComponent(Component* component);
 	private:
-		Ref<Scene> m_Scene;
+		Ref<Scene> m_scene;
 	};
 }
 

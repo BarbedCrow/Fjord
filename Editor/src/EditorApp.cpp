@@ -14,23 +14,23 @@ namespace Fjord
 
 	Editor::Editor()
 	{
-		m_Scene = CreateRef<Scene>();
+		m_scene = CreateRef<Scene>();
 
-		m_HierarchyPanel.SetScene(m_Scene);
-		m_InspectorPanel.SetScene(m_Scene);
-		m_ContentBrowser.SetScene(m_Scene);
+		m_HierarchyPanel.SetScene(m_scene);
+		m_InspectorPanel.SetScene(m_scene);
+		m_ContentBrowser.SetScene(m_scene);
 
 		FramebufferSpecification fbSpec;
 		fbSpec.Attachments = { FramebufferTextureFormat::RGBA8, FramebufferTextureFormat::RED_INTEGER, FramebufferTextureFormat::Depth };
 		fbSpec.Width = 1280;
 		fbSpec.Height = 720;
-		m_Framebuffer = CreateRef<Framebuffer>(fbSpec);
+		m_frameBuffer = CreateRef<Framebuffer>(fbSpec);
 
-		m_Systems.push_back(CreateRef<EditorCameraControllerSystem>(m_Scene));
-		m_RenderSystem = CreateRef<RenderSystem>(m_Scene);
-		m_Systems.push_back(m_RenderSystem);
+		// m_Systems.push_back(CreateRef<EditorCameraControllerSystem>(m_scene));
+		m_renderSys = CreateRef<RenderSystemLegacy>(m_scene);
+		// m_Systems.push_back(m_renderSys);
 
-		m_RenderSystem->SetFramebuffer(m_Framebuffer);
+		m_renderSys->SetFramebuffer(m_frameBuffer);
 		
 		//REGISTER components. Move to separated function
 		UIDComponent::Register<UIDComponent>();
@@ -54,7 +54,7 @@ namespace Fjord
 
 		if (!filepath.empty())
 		{
-			SceneLoader(m_Scene).Save(filepath);
+			SceneLoader(m_scene).Save(filepath);
 		}
 	}
 
@@ -63,14 +63,14 @@ namespace Fjord
 		std::string filepath;
 		if (!fromFile || !(filepath = FileDialogs::OpenFile("Fjord Scene (*.fscene)\0*.fscene\0")).empty())
 		{
-			*m_Scene = Scene(filepath);
-			auto registry = m_Scene->GetRegistry();
+			*m_scene = Scene(filepath);
+			auto registry = m_scene->GetRegistry();
 			auto cameraEntt = registry->create();
 			registry->emplace<UIDComponent>(cameraEntt, "EditorCamera");
 			registry->emplace<TransformComponent>(cameraEntt);
 			registry->emplace<EditorComponent>(cameraEntt);
 			registry->emplace<CameraComponent>(cameraEntt, GetWindow()->GetAspectRatio());
-			return filepath.empty() ? true : SceneLoader(m_Scene).Load(filepath);
+			return filepath.empty() ? true : SceneLoader(m_scene).Load(filepath);
 		}
 		
 		return false;
@@ -87,9 +87,9 @@ namespace Fjord
 		{
 			SaveScene();
 		}
-		else if (ctrlPressed && Input::IsKeyPressed(FJORD_KEY_S) && !m_Scene->GetPath().empty())
+		else if (ctrlPressed && Input::IsKeyPressed(FJORD_KEY_S) && !m_scene->GetPath().empty())
 		{
-			SaveScene(m_Scene->GetPath());
+			SaveScene(m_scene->GetPath());
 		}
 		else if (ctrlPressed && Input::IsKeyPressed(FJORD_KEY_O))
 		{
@@ -148,9 +148,9 @@ namespace Fjord
 		{
 			if (ImGui::BeginMenu("File"))
 			{
-				if (!m_Scene->GetPath().empty())
+				if (!m_scene->GetPath().empty())
 				{
-					if (ImGui::MenuItem("Save Scene", "Ctrl+S")) SaveScene(m_Scene->GetPath());
+					if (ImGui::MenuItem("Save Scene", "Ctrl+S")) SaveScene(m_scene->GetPath());
 				}
 
 				if (ImGui::MenuItem("Save Scene As", "Ctrl+Shift+S")) SaveScene();
@@ -176,14 +176,14 @@ namespace Fjord
 			
 		//Resize
 		ImVec2 viewportSize = ImGui::GetContentRegionAvail();
-		if (m_Framebuffer->GetSpecification().Width != viewportSize.x || m_Framebuffer->GetSpecification().Height != viewportSize.y)
+		if (m_frameBuffer->GetSpecification().Width != viewportSize.x || m_frameBuffer->GetSpecification().Height != viewportSize.y)
 		{
-			m_Framebuffer->Resize(viewportSize.x, viewportSize.y);
+			m_frameBuffer->Resize(viewportSize.x, viewportSize.y);
 		}
-		m_RenderSystem->HandleOnWindowResize(viewportSize.x, viewportSize.y);
+		m_renderSys->HandleOnWindowResize(viewportSize.x, viewportSize.y);
 
 		//Framebuffer to texture
-		uint32_t textureID = m_Framebuffer->GetColorAttachmentRendererID();
+		uint32_t textureID = m_frameBuffer->GetColorAttachmentRendererID();
 		ImGui::Image((void*)textureID, ImVec2{ viewportSize.x, viewportSize.y }, ImVec2{ 0, 1 }, ImVec2{ 1, 0 });
 
 		ImGui::End();

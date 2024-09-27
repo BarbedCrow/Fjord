@@ -12,7 +12,7 @@ namespace Fjord
 	class SceneLoader
 	{
 	public:
-		SceneLoader(const Ref<Scene>& scene) : m_Scene(scene) { };
+		SceneLoader(const Ref<Scene>& scene) : m_scene(scene) { };
 
 		bool Load(const std::string& path);
 		bool LoadRuntime(const std::string& path);
@@ -24,7 +24,7 @@ namespace Fjord
 		void LoadComponent(Component* component, YAML::Node& data);
 		void SaveComponent(Component* component, YAML::Emitter& out);
 	private:
-		Ref<Scene> m_Scene;
+		Ref<Scene> m_scene;
 	};
 
 }

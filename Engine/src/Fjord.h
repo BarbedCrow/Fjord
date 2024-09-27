@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Fjord/core/Application.h"
+#include "Fjord/core/Flow.h"
 #include "Fjord/core/Log.h"
 #include "Fjord/core/Event.h"
 
@@ -23,6 +24,7 @@
 #include "Fjord/ECS/Components/Components.h"
 #include "Fjord/ECS/Systems/EditorCameraControllerSystem.h"
 #include "Fjord/ECS/Systems/RenderSystem.h"
+#include "Fjord/ECS/Systems/RenderSystemLegacy.h"
 #include "Fjord/ECS/Systems/GameSystem.h"
 #include "Fjord/ECS/Scene.h"
 #include "Fjord/ECS/SceneLoader.h"

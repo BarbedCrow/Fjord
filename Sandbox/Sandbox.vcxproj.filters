@@ -67,6 +67,9 @@
     <None Include="assets\fonts\Roboto\Roboto-ThinItalic.ttf">
       <Filter>assets\fonts\Roboto</Filter>
     </None>
+    <None Include="assets\shaders\BasicShader.glsl">
+      <Filter>assets\shaders</Filter>
+    </None>
     <None Include="assets\shaders\FlatColorShader.glsl">
       <Filter>assets\shaders</Filter>
     </None>

@@ -81,6 +81,9 @@
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
@@ -105,7 +108,13 @@
     <ClInclude Include="src\Fjord\ECS\Systems\GameSystem.h">
       <Filter>src\Fjord\ECS\Systems</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Systems\PlayerMovementSystem.h">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Systems\RenderSystem.h">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Systems\RenderSystemLegacy.h">
       <Filter>src\Fjord\ECS\Systems</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\ImGui\ImGuiSystem.h">
@@ -145,6 +154,9 @@
       <Filter>src\Fjord\core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\core\Event.h">
+      <Filter>src\Fjord\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\core\Flow.h">
       <Filter>src\Fjord\core</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\core\Input.h">
@@ -1430,6 +1442,9 @@
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClCompile>
@@ -1451,7 +1466,13 @@
     <ClCompile Include="src\Fjord\ECS\Systems\EditorCameraControllerSystem.cpp">
       <Filter>src\Fjord\ECS\Systems</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Systems\PlayerMovementSystem.cpp">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\ECS\Systems\RenderSystem.cpp">
+      <Filter>src\Fjord\ECS\Systems</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Systems\RenderSystemLegacy.cpp">
       <Filter>src\Fjord\ECS\Systems</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\ImGui\ImGuiBuild.cpp">
@@ -1482,6 +1503,9 @@
       <Filter>src\Fjord\Utils</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\core\Application.cpp">
+      <Filter>src\Fjord\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\core\Flow.cpp">
       <Filter>src\Fjord\core</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\core\Input.cpp">

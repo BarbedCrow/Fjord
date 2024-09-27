@@ -18,10 +18,10 @@ namespace Fjord
 		YAML::Node entities = data["Entities"];
 		if (entities)
 		{
-			auto registry = m_Scene->GetRegistry();
+			auto registry = m_scene->GetRegistry();
 			for (YAML::Node& entity : entities)
 			{
-				auto entt = registry->create();
+				auto entt = m_scene->CreateEmptyEntity();
 
 				auto components = entity["Components"];
 				if (components)
@@ -58,12 +58,12 @@ namespace Fjord
 
 		out << YAML::BeginSeq; //Entities
 
-		auto view = m_Scene->GetRegistry()->view<UIDComponent>(entt::exclude<EditorComponent>);
-		auto registry = m_Scene->GetRegistry();
+		auto view = m_scene->GetRegistry()->view<UIDComponent>(entt::exclude<EditorComponent>);
+		auto registry = m_scene->GetRegistry();
 		for (auto entt : view)
 		{
 			out << YAML::BeginMap;// Entity
-			out << YAML::Key << "Entity" << YAML::Value << "1231232"; // add id
+			out << YAML::Key << "Entity" << YAML::Value << static_cast<uint32_t>(entt); // add id
 			
 			out << YAML::Key << "Components" << YAML::Value;
 			out << YAML::BeginSeq; // Components
@@ -72,8 +72,8 @@ namespace Fjord
 					const auto type = entt::resolve(info);
 					out << YAML::BeginMap;
 					out << YAML::Key << "Component" << YAML::Value << type.id();
-					auto any = type.func(Component::GET_FUNC).invoke({}, entt::forward_as_meta(*registry), entt);
-					auto component = any.try_cast<Component>();
+					auto& any = type.func(Component::GET_FUNC).invoke({}, entt::forward_as_meta(*registry), entt);
+					auto* component = any.try_cast<Component>();
 					SaveComponent(component, out);
 					out << YAML::EndMap;
 				});
