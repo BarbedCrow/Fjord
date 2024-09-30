@@ -149,7 +149,9 @@
     <ClInclude Include="src\Fjord\ECS\Components\ComponentProxy.h" />
     <ClInclude Include="src\Fjord\ECS\Components\Components.h" />
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\ModelRendererComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.h" />
+    <ClInclude Include="src\Fjord\ECS\Components\RendererComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\TransformComponent.h" />
     <ClInclude Include="src\Fjord\ECS\Components\UIDComponent.h" />
@@ -168,6 +170,7 @@
     <ClInclude Include="src\Fjord\Render\Shader.h" />
     <ClInclude Include="src\Fjord\Render\Texture.h" />
     <ClInclude Include="src\Fjord\Render\VertexArray.h" />
+    <ClInclude Include="src\Fjord\Utils\ModelLoader.h" />
     <ClInclude Include="src\Fjord\Utils\PlatformUtils.h" />
     <ClInclude Include="src\Fjord\Utils\YAMLUtils.h" />
     <ClInclude Include="src\Fjord\core\Application.h" />
@@ -604,7 +607,9 @@
     <ClCompile Include="src\Fjord\ECS\Components\CameraComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\Component.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\ModelRendererComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.cpp" />
+    <ClCompile Include="src\Fjord\ECS\Components\RendererComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\TransformComponent.cpp" />
     <ClCompile Include="src\Fjord\ECS\Components\UIDComponent.cpp" />
@@ -623,6 +628,7 @@
     <ClCompile Include="src\Fjord\Render\Shader.cpp" />
     <ClCompile Include="src\Fjord\Render\Texture.cpp" />
     <ClCompile Include="src\Fjord\Render\VertexArray.cpp" />
+    <ClCompile Include="src\Fjord\Utils\ModelLoader.cpp" />
     <ClCompile Include="src\Fjord\Utils\YAMLUtils.cpp" />
     <ClCompile Include="src\Fjord\core\Application.cpp" />
     <ClCompile Include="src\Fjord\core\Flow.cpp" />

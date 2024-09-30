@@ -7,7 +7,9 @@
 
 namespace Fjord
 {
-	Texture2D::Texture2D(uint32_t width, uint32_t height) : m_Width(width), m_Height(height)
+	Texture2D::Texture2D(uint32_t width, uint32_t height)
+		: m_Width(width)
+		, m_Height(height)
 	{
 		m_InternalFormat = GL_RGBA8;
 		m_DataFormat = GL_RGBA;
@@ -35,13 +37,11 @@ namespace Fjord
 
 		GLenum internalFormat = 0;
 		GLenum dataFormat = 0;
-		if (channels == 4)
-		{
+		if (channels == 4) {
 			internalFormat = GL_RGBA8;
 			dataFormat = GL_RGBA;
 		}
-		else if (channels == 3)
-		{
+		else if (channels == 3) {
 			internalFormat = GL_RGB8;
 			dataFormat = GL_RGB;
 		}
@@ -89,7 +89,8 @@ namespace Fjord
 	//TEXTURE LIBRARY////////////////////////////////////////////////////////////
 	Ref<Texture2D>& TextureLibrary::Get(const std::string& name)
 	{
-		if (!Exists(name)) Load(name);
+		if (!Exists(name))
+			Load(name);
 		return m_Textures.find(name)->second;
 	}
 

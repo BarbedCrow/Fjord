@@ -81,7 +81,13 @@
     <ClInclude Include="src\Fjord\ECS\Components\EditorComponent.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\ModelRendererComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.h">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\ECS\Components\RendererComponent.h">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\ECS\Components\SpriteRendererComponent.h">
@@ -137,6 +143,9 @@
     </ClInclude>
     <ClInclude Include="src\Fjord\Render\VertexArray.h">
       <Filter>src\Fjord\Render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Fjord\Utils\ModelLoader.h">
+      <Filter>src\Fjord\Utils</Filter>
     </ClInclude>
     <ClInclude Include="src\Fjord\Utils\PlatformUtils.h">
       <Filter>src\Fjord\Utils</Filter>
@@ -1442,7 +1451,13 @@
     <ClCompile Include="src\Fjord\ECS\Components\EditorComponent.cpp">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\ModelRendererComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
     <ClCompile Include="src\Fjord\ECS\Components\PerspectiveCameraComponent.cpp">
+      <Filter>src\Fjord\ECS\Components</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\ECS\Components\RendererComponent.cpp">
       <Filter>src\Fjord\ECS\Components</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\ECS\Components\SpriteRendererComponent.cpp">
@@ -1498,6 +1513,9 @@
     </ClCompile>
     <ClCompile Include="src\Fjord\Render\VertexArray.cpp">
       <Filter>src\Fjord\Render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Fjord\Utils\ModelLoader.cpp">
+      <Filter>src\Fjord\Utils</Filter>
     </ClCompile>
     <ClCompile Include="src\Fjord\Utils\YAMLUtils.cpp">
       <Filter>src\Fjord\Utils</Filter>

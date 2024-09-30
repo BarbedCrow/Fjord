@@ -17,19 +17,22 @@ namespace Fjord
 		const glm::mat4& GetViewProjectionMatrix() const { return m_vpMatrix; }
 
 		// returns FOV value in degrees
-		float GetFov(){ return glm::degrees(m_fov); }
+		float GetFov() { return glm::degrees(m_fov); }
 		void SetFov(float deg) { m_fov = glm::radians(deg); }
+
+		void Rotate(glm::vec3 pos, glm::vec3 rot);
 
 	protected:
 		void SetupProxy() override;
 
 	private:
-		float m_aspectRatio{0.f};
-		float m_fov{0.f};
+		float m_aspectRatio { 0.f };
+		float m_fov { 0.f };
 
-		glm::mat4 m_viewMatrix{};
-		glm::mat4 m_projectionMatrix{};
-		glm::mat4 m_vpMatrix{};
+		glm::vec3 m_target {};
+
+		glm::mat4 m_viewMatrix {};
+		glm::mat4 m_projectionMatrix {};
+		glm::mat4 m_vpMatrix {};
 	};
-}
-
+} // namespace Fjord

@@ -35,7 +35,7 @@
 
 	void main()
 	{
-		vec4 texColor = v_Color;
+		vec4 texColor = vec4(1,1,1,1);
 		switch(int(v_TexIndex))
 		{
 			case  0: texColor *= texture(u_Textures[ 0], v_TexCoord * v_TilingFactor); break;

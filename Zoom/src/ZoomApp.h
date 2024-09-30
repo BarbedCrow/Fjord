@@ -8,10 +8,10 @@ namespace Fjord
 	class ZoomApp : public Application
 	{
 	public:
-			ZoomApp();
-			~ZoomApp() override;
+		ZoomApp();
+		~ZoomApp() override;
 
 	protected:
-			void UpdateInternal() override;
+		void UpdateInternal() override;
 	};
 }

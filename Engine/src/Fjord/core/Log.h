@@ -25,12 +25,12 @@ namespace Fjord
 	};
 }
 
-#define FJORD_CORE_ERROR(...)    ::Fjord::Log::GetCoreLogger()->error(__VA_ARGS__)
-#define FJORD_CORE_WARNING(...)  ::Fjord::Log::GetCoreLogger()->warn(__VA_ARGS__)
-#define FJORD_CORE_INFO(...)     ::Fjord::Log::GetCoreLogger()->info(__VA_ARGS__)
-#define FJORD_CORE_TRACE(...)    ::Fjord::Log::GetCoreLogger()->trace(__VA_ARGS__)
+#define FJORD_CORE_ERROR(...) ::Fjord::Log::GetCoreLogger()->error(__VA_ARGS__)
+#define FJORD_CORE_WARNING(...) ::Fjord::Log::GetCoreLogger()->warn(__VA_ARGS__)
+#define FJORD_CORE_INFO(...) ::Fjord::Log::GetCoreLogger()->info(__VA_ARGS__)
+#define FJORD_CORE_TRACE(...) ::Fjord::Log::GetCoreLogger()->trace(__VA_ARGS__)
 
-#define FJORD_ERROR(...)    ::Fjord::Log::GetClientLogger()->error(__VA_ARGS__)
-#define FJORD_WARNING(...)  ::Fjord::Log::GetClientLogger()->warn(__VA_ARGS__)
-#define FJORD_INFO(...)     ::Fjord::Log::GetClientLogger()->info(__VA_ARGS__)
-#define FJORD_TRACE(...)    ::Fjord::Log::GetClientLogger()->trace(__VA_ARGS__)
+#define FJORD_ERROR(...) ::Fjord::Log::GetClientLogger()->error(__VA_ARGS__)
+#define FJORD_WARNING(...) ::Fjord::Log::GetClientLogger()->warn(__VA_ARGS__)
+#define FJORD_INFO(...) ::Fjord::Log::GetClientLogger()->info(__VA_ARGS__)
+#define FJORD_TRACE(...) ::Fjord::Log::GetClientLogger()->trace(__VA_ARGS__)

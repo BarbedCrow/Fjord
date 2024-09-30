@@ -15,7 +15,7 @@ namespace Fjord
 	{
 		s_instance = this;
 		Log::Init();
-		m_window = Window::Create("FJORD", 1920, 1080);
+		m_window = Window::Create("FJORD", 1920, 1920);
 
 		ImGuiSystem::Init(m_window->GetNativeWindow());
 
@@ -29,8 +29,7 @@ namespace Fjord
 
 	void Application::Start()
 	{
-		for(auto flow : m_flows)
-		{
+		for (auto flow : m_flows) {
 			flow->Start();
 		}
 		m_running = true;
@@ -38,14 +37,12 @@ namespace Fjord
 
 	void Application::Update()
 	{
-		while (m_running)
-		{
+		while (m_running) {
 			Time::SetTime(glfwGetTime());
 			m_window->Update();
 			ImGuiSystem::Begin();
 			UpdateInternal();
-			for(auto flow : m_flows)
-			{
+			for (auto flow : m_flows) {
 				flow->Update();
 			}
 			ImGuiSystem::End();
@@ -54,8 +51,7 @@ namespace Fjord
 
 	bool Application::Close()
 	{
-		for(auto flow : m_flows)
-		{
+		for (auto flow : m_flows) {
 			flow->Close();
 		}
 		m_running = false;

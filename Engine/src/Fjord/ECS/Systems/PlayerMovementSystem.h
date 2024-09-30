@@ -9,15 +9,16 @@ namespace Fjord
 	class PlayerMovementSystem : public GameSystem
 	{
 	public:
-		PlayerMovementSystem(Ref<Scene>& scene) : GameSystem(scene) {}
-		virtual ~PlayerMovementSystem() override {}
+		PlayerMovementSystem(Ref<Scene>& scene)
+			: GameSystem(scene)
+		{}
+		~PlayerMovementSystem() override {}
 
-		virtual void Activate() override;
-		virtual void Deactivate() override;
+		void Update() override;
 
-		virtual void Update() override;
 	private:
 		/*returns velocity based on player's inputs*/
 		glm::vec3& GetDesiredVelocity();
+		glm::vec3& GetDesiredRotation();
 	};
-}
+} // namespace Fjord

@@ -13,10 +13,11 @@ namespace Fjord
 		m_proxy = obj.m_proxy;
 	}
 
-
 	void Component::Init()
 	{
 		SetupProxy();
+
+		OnInit();
 	}
 
 }

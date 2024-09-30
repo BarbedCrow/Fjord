@@ -9,9 +9,9 @@
 namespace Fjord
 {
 	TransformComponent::TransformComponent(const glm::vec3& pos, const glm::vec3& rot, const glm::vec3& scale)
-	: m_pos(pos)
-	, m_rot(rot)
-	, m_scale(scale)
+		: m_pos(pos)
+		, m_rot(rot)
+		, m_scale(scale)
 	{
 		CalculateTransform();
 	}
@@ -27,10 +27,7 @@ namespace Fjord
 	void TransformComponent::CalculateTransform()
 	{
 		m_tr = glm::mat4(
-			glm::translate(glm::mat4(1.0f), m_pos) *
-			glm::toMat4((glm::quat(glm::radians(m_rot)))) *
-			glm::scale(glm::mat4(1.0f), m_scale)
-		);
+			glm::translate(glm::mat4(1.0f), m_pos) * glm::toMat4((glm::quat(glm::radians(m_rot)))) * glm::scale(glm::mat4(1.0f), m_scale));
 	}
 
 	void TransformComponent::SetPos(const glm::vec3& pos)
@@ -39,15 +36,16 @@ namespace Fjord
 		CalculateTransform();
 	}
 
-	void TransformComponent::SetRot(const glm::vec3& scale)
+	void TransformComponent::SetScale(const glm::vec3& scale)
 	{
 		m_scale = scale;
 		CalculateTransform();
 	}
 
-	void TransformComponent::SetScale(const glm::vec3& rot)
+	void TransformComponent::SetRot(const glm::vec3& rot)
 	{
 		m_rot = rot;
+		CalculateTransform();
 	}
 
 	void TransformComponent::SetupProxy()
